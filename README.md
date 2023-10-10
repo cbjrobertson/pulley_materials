@@ -16,7 +16,7 @@ The task is to refactor the TeX code for the rest of the systems such that
 we can alter: 
 1. Ceiling height (defined with \a)
 1. Pulley diameter (defined with \radlg and \radrp)
-1. rope thickness (you'll need to add a `\width` variable for this, as I showed you on Friday).
+1. Rope thickness (you'll need to add a `\width` variable for this, as I showed you on Friday).
 
 Please set baseline values as follows:
 
