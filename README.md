@@ -19,9 +19,11 @@ add a width variable for this, as I showed you on Friday.
 
 Please set baseline values as follows:
 
+```latex
 \a{10}
 \radlg{1}
 \radrp{1.1}
 \width{1mm}
+```
 
 Let me know if you have any questions. 
