@@ -18,19 +18,20 @@
 	\begin{figure}[H]
 			\begin{tikzpicture}
 				%%%%% START %%%%%
-				\def\a{11.75}
-				\def\radlg{0.5}
-				\def\radrp{0.6}
+				\def\a{10}
+				\def\radlg{\radrp-0.1}
+				\def\radrp{1.1}
 				\def\radsm{0.1}
 				\def\xone{1}
-				\def\yone{10}
-				\def\xtwo{4.3}
-				\def\ytwo{10}
-				\def\xthree{2.7}
-				\def\ythree{4}
+				\def\yone{\a-1.75}
+				\def\xtwo{\xone+3.3}
+				\def\ytwo{\a-1.75}
+				\def\xthree{\xone+1.7}
+				\def\ythree{\a-7.75}
 				\def\xh{3.2}
-				\def\hlentwo{10.36}
-				\def\hlen{10.36}
+				\def\hlentwo{\yone+3.14}
+				\def\hlen{\yone+3.14}
+				\def\width{1mm}
 				
 				\draw[fill=black] (-2,\a) rectangle (6,\a+0.125);
 
@@ -46,18 +47,18 @@
 				\draw[fill=black] (\xthree,\ythree) circle (\radsm);
 
 
-				\draw[thick]  (\xh-0.5,\ytwo-\hlentwo-0.5) -- (\xh,\ytwo-\hlentwo) -- (\xh+0.5,\ytwo-\hlentwo-0.5);
-				\draw[thick]  (\xh+0.5,\yone-\hlen-0.5) -- (\xh+1,\yone-\hlen) -- (\xh+1.5,\yone-\hlen-0.5);
+				\draw[line width=\width] (\xh-0.5,\ytwo-\hlentwo-0.5) -- (\xh,\ytwo-\hlentwo) -- (\xh+0.5,\ytwo-\hlentwo-0.5);
+				\draw[line width=\width] (\xh+0.5,\yone-\hlen-0.5) -- (\xh+1,\yone-\hlen) -- (\xh+1.5,\yone-\hlen-0.5);
 				\draw[fill=black!50] (\xh-0.5,\yone-\hlen-0.5) rectangle (\xh+1.6,\yone-\hlen-0.5-2.1);
 				
-				\draw[thick] (\xone-\radrp,-1.9) -- (\xone-\radrp,\yone);
-				\centerarc[thick](\xone,\yone)(0:180:\radrp);
-				\draw[thick] (\xone+\radrp,\yone) -- (\xthree-\radrp,\ythree);
-				\centerarc[thick](\xthree,\ythree)(180:370:\radrp);
-				\draw[thick] (\xthree+\radrp,\ythree-0.01) -- (\xtwo-\radrp,\ytwo);
-				\centerarc[thick](\xtwo,\ytwo)(0:180:\radrp);
-				\draw[thick] (\xh+1,\yone-\hlen) -- (\xtwo+\radrp,\ytwo);
-				\draw[thick] (\xh,\yone-\hlen) -- (\xthree,\ythree);
+				\draw[line width=\width] (\xone-\radrp,-1.9) -- (\xone-\radrp,\yone);
+				\centerarc[line width=\width](\xone,\yone)(0:180:\radrp);
+				\draw[line width=\width] (\xone+\radrp,\yone) -- (\xthree-\radrp,\ythree);
+				\centerarc[line width=\width](\xthree,\ythree)(180:370:\radrp);
+				\draw[line width=\width] (\xthree+\radrp,\ythree-0.01) -- (\xtwo-\radrp,\ytwo);
+				\centerarc[line width=\width](\xtwo,\ytwo)(0:180:\radrp);
+				\draw[line width=\width] (\xh+1,\yone-\hlen) -- (\xtwo+\radrp,\ytwo);
+				\draw[line width=\width] (\xh,\yone-\hlen) -- (\xthree,\ythree);
 
 				\node at (-0.1,-2) {\Strichmaxerl[10][35][45]};
 						

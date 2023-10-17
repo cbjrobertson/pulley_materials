@@ -18,18 +18,19 @@
 	\begin{figure}[H]
 			\begin{tikzpicture}
 				%%%%% START %%%%%
-				\def\a{11.75}
-				\def\radlg{1}
+				\def\a{10}
+				\def\radlg{\radrp-0.1}
 				\def\radrp{1.1}
 				\def\radsm{0.1}
 				\def\xone{2}
-				\def\yone{10}
+				\def\yone{\a-1.75}
 				\def\xtwo{3.1}
-				\def\ytwo{6}
-				\def\xh{0.9}
-				\def\xy{2}
-				\def\hlentwo{6.36}
-				\def\hlen{10.36}
+				\def\ytwo{\a-5.75}
+				\def\xh{\xone-\radrp}
+				\def\xy{\xtwo-\radrp}
+				\def\hlentwo{\hlen+4}
+				\def\hlen{\yone+3.14}
+				\def\width{1mm}
 				
 				\draw[fill=black] (-2,\a) rectangle (6,\a+0.125);
 
@@ -44,13 +45,13 @@
 				\draw[thick]  (\xy-0.5,\ytwo-\hlentwo-0.5) -- (\xy,\ytwo-\hlentwo) -- (\xy+0.5,\ytwo-\hlentwo-0.5);
 				\draw[fill=black!50] (\xh-0.5,\yone-\hlen-0.5) rectangle (\xh+1.6,\yone-\hlen-0.5-2.1);
 
-				\draw[thick] (\xh,\yone) -- (\xh,\yone-\hlen);
-				\centerarc[thick](\xone,\yone)(0:180:\radrp);
-				\draw[thick] (\xone+\radrp,\yone) -- (\xtwo,\ytwo);
+				\draw[line width=\width] (\xh,\yone) -- (\xh,\yone-\hlen);
+				\centerarc[line width=\width](\xone,\yone)(0:180:\radrp);
+				\draw[line width=\width] (\xone+\radrp,\yone) -- (\xtwo,\ytwo);
 
-				\draw[thick] (\xy,\ytwo) -- (\xy,\ytwo-\hlentwo);
-				\centerarc[thick](\xtwo,\ytwo)(0:180:\radrp);
-				\draw[thick] (\xtwo+\radrp,\ytwo) -- (\xtwo+\radrp,-1.9);
+				\draw[line width=\width] (\xy,\ytwo) -- (\xy,\ytwo-\hlentwo);
+				\centerarc[line width=\width](\xtwo,\ytwo)(0:180:\radrp);
+				\draw[line width=\width] (\xtwo+\radrp,\ytwo) -- (\xtwo+\radrp,-1.9);
 
 				\node at (4.65,-2) {\Strichmaxerl[10][-35][-50]};
 						
