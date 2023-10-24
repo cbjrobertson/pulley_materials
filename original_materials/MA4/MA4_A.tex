@@ -22,20 +22,21 @@
 	\begin{figure}[H]
 		\begin{tikzpicture}
 			%%%%% START %%%%%
-			\def\a{11.75}
-			\def\radlg{1}
+			\def\a{10}
+			\def\radlg{\radrp - 0.1}
 			\def\radrp{1.1}
 			\def\radsm{0.1}
-			\def\yone{1}
+			\def\yone{0.09*\a}
 			\def\xone{1}
-			\def\ytwo{10}
+			\def\ytwo{\a-1.5}
 			\def\xtwo{3.2}
 			\def\xthree{2.1}
-			\def\ythree{4}
+			\def\ythree{\a-6.75}
 			\def\xfour{4.3}
 			\def\dx{5.9}
 			\def\dy{-1.9}
 			\def\dw{1.75mm}
+			\def\width{1mm}
 			
 			\draw[fill=black] (-2,\a) rectangle (6,\a+0.125);
 			
@@ -49,17 +50,17 @@
 			\draw[fill=black] (\xfour,\ytwo) circle (\radsm);
 			\draw[thick] (\xfour,\ytwo) -- (\xfour,\a);
 			
-			\draw (\xone,\yone) -- (\xone,\yone-1.5) -- (\xone-0.5,\yone-2) -- (\xone+0.5,\yone-2) -- (\xone,\yone-1.5);
-			\draw[fill=black!50] (\xone-1,\yone-2) rectangle (\xone+1,\yone-4); 
+			\draw (\xone,\yone) -- (\xone,\yone-2) -- (\xone-0.5,\yone-2.5) -- (\xone+0.5,\yone-2.5) -- (\xone,\yone-2);
+			\draw[fill=black!50] (\xone-1,\yone-2.5) rectangle (\xone+1,\yone-4.5); 
 			
-			\draw[thick] (\xone-\radrp,\a) -- (\xone-\radrp,\yone); 
-			\centerarc[thick](\xone,\yone)(180:360:\radrp);
-			\draw[thick](\xone+\radrp,\yone) -- (\xthree,\ythree);
-			\draw[thick] (\xthree-\radrp,\a) -- (\xthree-\radrp,\ythree);
-			\centerarc[thick](\xthree,\ythree)(180:360:\radrp);
-			\draw[thick](\xthree+\radrp,\ythree) -- (\xfour-\radrp,\ytwo);
-			\centerarc[thick](\xfour,\ytwo)(0:180:\radrp);
-			\draw[thick] (\xfour+\radrp,\ytwo) -- (\xfour+\radrp,-1.9);
+			\draw[line width=\width] (\xone-\radrp,\a) -- (\xone-\radrp,\yone); 
+			\centerarc[line width=\width](\xone,\yone)(180:360:\radrp);
+			\draw[line width=\width](\xone+\radrp,\yone) -- (\xthree,\ythree);
+			\draw[line width=\width] (\xthree-\radrp,\a) -- (\xthree-\radrp,\ythree);
+			\centerarc[line width=\width](\xthree,\ythree)(180:360:\radrp);
+			\draw[line width=\width](\xthree+\radrp,\ythree) -- (\xfour-\radrp,\ytwo);
+			\centerarc[line width=\width](\xfour,\ytwo)(0:180:\radrp);
+			\draw[line width=\width] (\xfour+\radrp,\ytwo) -- (\xfour+\radrp,-3.1);
 %			\draw[line width=\dw] (\dx,\dy) circle (0.375);
 %			\draw[line width=\dw] (\dx,\dy-0.375-0.15) -- (\dx,\dy-0.375-0.9);
 %			\draw[line width=\dw] (\dx,\dy-0.375-0.9) -- (\dx-0.4,\dy-0.375-1.35);
@@ -67,9 +68,9 @@
 %			\draw[line width=\dw] (\dx,\dy-0.375-0.5) -- (\dx-0.45,\dy-0.6);
 %			\draw[line width=\dw] (\dx,\dy-0.375-0.5) -- (\dx+0.45,\dy-1.3);
 
-			\node at (\dx,\dy) {\Strichmaxerl[10][-35][-50]};
+			\node at (5.8, -2.5) {\Strichmaxerl[10][-35][-50]};
 			
-			\draw[fill=black] (-2,-3) rectangle (7,-3.15);
+			\draw[fill=black] (-2,-3.5) rectangle (7,-3.6);
 			%%%%% END %%%%%
 		\end{tikzpicture}
 	\end{figure}
