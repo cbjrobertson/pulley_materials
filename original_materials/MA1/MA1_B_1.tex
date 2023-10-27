@@ -1,6 +1,5 @@
 \documentclass{article}
 
-
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{tikzsymbols}
@@ -8,7 +7,6 @@
 \usepackage{float}
 \usepackage{pdflscape}
 \usepackage{geometry}
-\geometry{a4paper, landscape,margin=1cm}
 
 \def\centerarc[#1](#2)(#3:#4:#5){\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5);}
 
@@ -18,40 +16,43 @@
 	\begin{figure}[H]
 		\begin{tikzpicture}
 			%%%%% START %%%%%
-			\def\a{7}
+			\def\a{10}
 			\def\radlg{1}
 			\def\radrp{1.1}
 			\def\radsm{0.1}
 			\def\yone{\a-2}
 			\def\xone{1}
 			\def\xtwo{3.5}
-			\def\xthree{4.7}
-			\def\ythree{-1}
-			\def\dxtwo{9}
-			\def\dx{9}
+			\def\ytwo{\a-\a*0.8}			
+			\def\dx{5.3}
 			\def\dy{\a-2}
-			\def\dw{1.75mm}
-			\def\hlena{\a}
+			\def\hlena{\a*0.6}
 			\def\width{0.5mm}
-	
 			
-			\draw[fill=black] (-2,\a) rectangle (10,\a+0.125);
+			\draw[fill=black] (-2,\a) rectangle (8,\a+0.125);
 
+			\draw (\xtwo,\ytwo) circle (\radlg);
+			\draw[fill=black] (\xtwo,\ytwo) circle (\radsm);
+			\draw[line width=\width] (\xtwo,\ytwo) -- (\xtwo,0);
+					
 			\draw (\xone,\yone) circle (\radlg);
 			\draw[fill=black] (\xone,\yone) circle (\radsm);
-			\draw[thick] (\xone,\a) -- (\xone,\yone);
+			\draw[line width=\width] (\xone,\a) -- (\xone,\yone);
 			
 			\draw[line width=\width](\xone-0.5-\radrp,\a-\hlena-0.5) --  (\xone-\radrp,\a-\hlena) -- (\xone+0.5-\radrp,\a-\hlena-0.5);			
 			\draw[fill=black!50] (\xone-1-\radrp,\a-\hlena-0.5) rectangle (\xone+1-\radrp,\a-\hlena-2-0.5); 
 			
 			\draw[line width=\width](\xone-\radrp,\yone) -- (\xone-\radrp,\a-\hlena);
-			\centerarc[line width=\width](\xone,\yone)(90:180:\radrp)
-			\draw[line width=\width](\xone,\yone+\radrp) -- (\dx,\dy+.1);
-
-			\node at (\dx,\dy) {\Strichmaxerl[10][-35][-50]};
-			\draw[fill=black] (5,\a-3) rectangle (10,\a-3.15);
+			\centerarc[line width=\width](\xone,\yone)(180:0:\radrp)
+			\draw[line width=\width](\xone+\radrp,\yone) -- (\xtwo-\radrp,\ytwo);
+			\centerarc[line width=\width](\xtwo,\ytwo)(180:360:\radrp)
 			
-			\draw[fill=black] (-2,-3) rectangle (10,-3.15);
+			\draw[line width=\width](\xtwo+\radrp,\ytwo) -- (\dx-0.35,\dy-0.2);
+
+			\node at (\dx,\dy) {\Strichmaxerl[10][35][-130]};
+			\draw[fill=black] (5,\a-3) rectangle (7,\a-3.15);
+			
+			\draw[fill=black] (-2,0) rectangle (8,-0.15);
 			%%%%% END %%%%%
 		\end{tikzpicture}
 	\end{figure}
