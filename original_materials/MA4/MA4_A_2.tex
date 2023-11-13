@@ -22,16 +22,16 @@
 	\begin{figure}[H]
 		\begin{tikzpicture}
 			%%%%% START %%%%%
-			\def\a{10}
+			\def\a{14}
 			\def\radlg{\radrp - 0.1}
-			\def\radrp{1.1}
+			\def\radrp{1}
 			\def\radsm{0.1}
 			\def\yone{0.09*\a}
 			\def\xone{1}
-			\def\ytwo{\a-1.5}
+			\def\ytwo{\a-0.3*\a}
 			\def\xtwo{3.2}
 			\def\xthree{2.1}
-			\def\ythree{\a-6.75}
+			\def\ythree{\a-0.5*\a}
 			\def\xfour{4.3}
 			\def\dx{5.9}
 			\def\dy{-1.9}
@@ -39,7 +39,7 @@
 			\def\width{1mm}
 			\def\ywallone{-2}
 			\def\xwallone{\xone+5.5}
-			\def\ywalltwo{3}
+			\def\ywalltwo{0.3*\a}
 			\def\xwalltwo{\xone+6.5}
 			
 			\draw[fill=black] (-2,\a) rectangle (12,\a+0.125);
@@ -73,27 +73,21 @@
 			
 			
 %weight
-			\draw (\xone,\yone) -- (\xone,\yone-2) -- (\xone-0.5,\yone-2.5) -- (\xone+0.5,\yone-2.5) -- (\xone,\yone-2);
-			\draw[fill=black!50] (\xone-1,\yone-2.5) rectangle (\xone+1,\yone-4.5); 
+			\draw (\xone,\yone) -- (\xone,\yone-\a*0.15) -- (\xone-0.5,\yone-\a*0.2) -- (\xone+0.5,\yone-\a*0.2) -- (\xone,\yone-\a*0.15);
+			\draw[fill=black!50] (\xone-1,\yone-\a*0.2) rectangle (\xone+1,\yone-\a*0.2-2); 
 			
 			\draw[line width=\width] (\xone-\radrp,\a) -- (\xone-\radrp,\yone); 
 			\centerarc[line width=\width](\xone,\yone)(180:360:\radrp);
 			\draw[line width=\width](\xone+\radrp,\yone) -- (\xthree,\ythree);
 			\draw[line width=\width] (\xthree-\radrp,\a) -- (\xthree-\radrp,\ythree);
-			\centerarc[line width=\width](\xthree,\ythree)(180:360:\radrp);
-			\draw[line width=\width](\xthree+\radrp,\ythree) -- (\xfour-\radrp,\ytwo);
-			\centerarc[line width=\width](\xfour,\ytwo)(20:180:\radrp);
-			\draw[line width=\width] (\xfour+\radrp-\radrp/18,\ytwo+\radrp/3) -- (\xwalltwo+\radrp-\radrp/8, \ywalltwo+\radrp/2);
+			\centerarc[line width=\width](\xthree,\ythree)(180:340:\radrp);
+			\draw[line width=\width](\xthree+\radrp*0.93,\ythree-0.4*\radrp) -- (\xfour-\radrp*0.93,\ytwo+\radrp*0.4);
+			\centerarc[line width=\width](\xfour,\ytwo)(35:160:\radrp);
+			\draw[line width=\width] (\xfour+\radrp-\radrp/4,\ytwo+\radrp/1.5) -- (\xwalltwo+\radrp-\radrp/8, \ywalltwo+\radrp/2);
 			\centerarc[line width=\width](\xwalltwo,\ywalltwo)(215:135:-\radrp);
-			\draw[line width=\width](\xwalltwo+\radrp*0.8,\ywalltwo-\radrp*0.6) -- (\xwallone-\radrp*0.97,-1.6);
+			\draw[line width=\width](\xwalltwo+\radrp*0.8,\ywalltwo-\radrp*0.6) -- (\xwallone-\radrp*0.93,\ywallone+0.4*\radrp);
 			\centerarc[line width=\width](\xwallone,\ywallone)(-30:100:-\radrp);
 			\draw[line width=\width](\xwallone,\ywallone-\radrp) -- (10.5,-2.3);
-%			\draw[line width=\dw] (\dx,\dy) circle (0.375);
-%			\draw[line width=\dw] (\dx,\dy-0.375-0.15) -- (\dx,\dy-0.375-0.9);
-%			\draw[line width=\dw] (\dx,\dy-0.375-0.9) -- (\dx-0.4,\dy-0.375-1.35);
-%			\draw[line width=\dw] (\dx,\dy-0.375-0.9) -- (\dx+0.4,\dy-0.375-1.35);
-%			\draw[line width=\dw] (\dx,\dy-0.375-0.5) -- (\dx-0.45,\dy-0.6);
-%			\draw[line width=\dw] (\dx,\dy-0.375-0.5) -- (\dx+0.45,\dy-1.3);
 
 			\node at (10.8, -2.5) {\Strichmaxerl[10][-35][-50]};
 			

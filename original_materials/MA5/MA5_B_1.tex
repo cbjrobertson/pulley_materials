@@ -8,11 +8,10 @@
 \usetikzlibrary{calc,patterns,shapes.geometric}
 \usepackage{float}
 \usepackage{pdflscape}
-\usepackage{geometry}
-\geometry{a4paper, landscape, margin=1cm}
+
 
 \def\centerarc[#1](#2)(#3:#4:#5){\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5);}
-\def\linefromarc[#1](#2:#3:#4:#5)(#6:#7){\draw[#1]($({sin(#2)})$,#3) -- (#6,#7);}
+
 
 \pagestyle{empty}
 \begin{document}
@@ -20,32 +19,33 @@
 	\begin{figure}[H]
 		\begin{tikzpicture}
 			%%%%% START %%%%%
-			\def\a{12}
+			\def\a{14}
+			\def\radrp{1}
 			\def\radlg{\radrp - 0.1}
-			\def\radrp{0.6}
 			\def\radsm{0.1}
-			\def\xone{0.6}
-			\def\yone{\a - 7.75}
-			\def\xtwo{\xone+0.6}
-			\def\ytwo{\a - 10.75}
+			\def\xone{0}
+			\def\yone{\a -\a*0.6}
+			\def\xtwo{1}
+			\def\ytwo{\a - \a*0.85}
 			\def\xthree{\xone+1.4}
-			\def\ythree{\a-2.75}
-			\def\xfour{1.45}
-			\def\yfour{\a-3.75}
-			\def\dx{-1}
+			\def\ythree{\a-\a*0.2}
+			\def\xfour{\xthree-\radlg+0.1}
+			\def\yfour{\a-\a*0.225}
+			\def\dx{-5.5}
 			\def\dy{-1.9}
 			\def\dw{1.75mm}
 			\def\xbox{0.75}
-			\def\ybox{-1}
-			\def\width{1mm}
-			\def\ywallone{\a-\a+2}
-			\def\xwallone{\xone-1.1}
+			\def\ybox{\a-\a*1.05}
+			\def\width{0.5mm}
+			\def\ywalltwo{\a-\a*1.1}
+			\def\xwalltwo{-2}
+			\def\bump{0.3}
 			
-			\draw[fill=black] (-2,\a) rectangle (5,\a+0.125);
+			\draw[fill=black] (-6,\a) rectangle (5,\a+0.125);
 			
 			\draw (\xone,\yone) circle (\radlg);
 			\draw[fill=black] (\xone,\yone) circle (\radsm);
-	
+			
 			\draw (\xtwo,\ytwo) circle (\radlg);
 			\draw[fill=black] (\xtwo,\ytwo) circle (\radsm);
 			
@@ -53,34 +53,32 @@
 			\draw[fill=black] (\xthree,\ythree) circle (\radsm);
 			\draw[very thick] (\xthree,\ythree) -- (\xthree,\a);
 			
-				\draw[pattern=north west lines, pattern color=black] (\xwallone-0.1,\ywallone+\radrp+0.1) rectangle (\xwallone+0.1,\ywallone-\radrp-0.1); 
-			\draw[pattern=north west lines, pattern color=black] (\xwallone,\ywallone+\radrp+0.1) circle (\radsm);
-			\draw[pattern=north west lines, pattern color=black] (\xwallone,\ywallone-\radrp-0.1) circle (\radsm);
 			
-			\draw (\xwallone,\ywallone) circle (\radlg);
-			\draw[fill=black] (\xwallone,\ywallone) circle (\radsm);
+			\draw (\xwalltwo,\ywalltwo) circle (\radlg);
+			\draw[fill=black] (\xwalltwo,\ywalltwo) circle (\radsm);
+			\draw[pattern=north west lines, pattern color=black] (\xwalltwo-0.1,\ywalltwo+\radrp+\bump) rectangle (\xwalltwo+0.1,\ywalltwo-\radrp-\bump); 
+			\draw[fill=black!50] (\xwalltwo,\ywalltwo+\radrp+\bump) circle (\radsm);
+			\draw[fill=black!50] (\xwalltwo,\ywalltwo-\radrp-\bump) circle (\radsm);
 			
-			
-
 			\draw[thick]  (\xbox,\ybox) -- (\xbox+0.5,\ybox+0.5) -- (\xbox+1,\ybox) -- (\xbox+1.5,\ybox+0.5) -- (\xbox+2,\ybox);
 			\draw[fill=black!50] (\xbox,\ybox) rectangle (\xbox+2,\ybox-2); 
-
-			\draw[line width=\width] (\dx+0.4,\dy+0.1) -- (\xwallone+\radrp,\ywallone); 
-			\centerarc[line width=\width](\xwallone,\ywallone)(180:200:-\radrp);
-			\draw[line width=\width]({\xwallone+\radrp*cos(10)},{\ywallone-\radrp*sin(700)}) --  (\xone-\radrp,\yone);
+			
+			\draw[line width=\width] (\dx+0.45,\dy+0.1) -- (\xwalltwo,\ywalltwo-\radrp);
+			\centerarc[line width=\width](\xwalltwo,\ywalltwo)(270:360:\radrp);
+			\draw[line width=\width] (\xwalltwo+\radrp,\ywalltwo) -- (\xone-\radrp,\yone);
 			\draw[line width=\width] (\xone,\yone) -- (\xfour,\yfour);
-			\draw[line width=\width](\xfour-0.1,\yfour-0.3) rectangle (\xfour+0.1,\yfour+0.3); 
-			\centerarc[line width=\width](\xone,\yone)(0:180:\radrp);
-			\draw[line width=\width] (\xone+\radrp,\yone) -- (\xtwo-\radrp,\ytwo);
-			\centerarc[line width=\width](\xtwo,\ytwo)(180:360:\radrp);
+			\draw[line width=\width, fill=black](\xfour-0.1,\yfour-0.3) rectangle (\xfour+0.1,\yfour+0.3); 
+			\centerarc[line width=\width](\xone,\yone)(-20:180:\radrp);
+			\draw[line width=\width] ({\xone+\radrp*cos(20)}, {\yone-\radrp*sin(20)}) -- ({\xtwo+\radrp*cos(200)}, {\ytwo-\radrp*sin(200)});
+			\centerarc[line width=\width](\xtwo,\ytwo)(160:380:\radrp);
+			\draw[line width=\width] ({\xtwo+\radrp*cos(340)},{\ytwo-\radrp*sin(340)}) -- (\xthree-\radrp,\ythree);
 			\draw[line width=\width](\xtwo,\ytwo) -- (\xbox+0.5,\ybox+0.5);
-			\draw[line width=\width] (\xtwo+\radrp,\ytwo) -- (\xthree-\radrp,\ythree);
 			\centerarc[line width=\width](\xthree,\ythree)(0:180:\radrp);
 			\draw[line width=\width] (\xthree+\radrp,\ythree) -- (\xbox+1.5,\ybox+0.5);
 			
-			\node at (-1,-2) {\Strichmaxerl[10][50][35]};
+			\node at (\dx,\dy) {\Strichmaxerl[10][50][35]};
 			
-			\draw[fill=black] (-2,-3) rectangle (5,-3.15);
+			\draw[fill=black] (-6,-3) rectangle (5,-3.15);
 			%%%%% END %%%%%
 		\end{tikzpicture}
 	\end{figure}
