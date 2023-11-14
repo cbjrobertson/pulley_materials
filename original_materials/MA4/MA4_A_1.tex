@@ -45,17 +45,15 @@
 			\draw (\xtwo,\ytwo) circle (\radlg);
 			\draw[fill=black] (\xtwo,\ytwo) circle (\radsm);
 			\draw[thick] (\xtwo,\ytwo) -- (\xtwo,\a);
-		
-			\draw[pattern=north west lines, pattern color=black] (\xwallone-0.1,\ywallone+\radrp+\bump) rectangle (\xwallone+0.1,\ywallone-\bump-\radrp); 
-			\draw[fill=black!50] (\xwallone,\ywallone+\radrp+\bump) circle (\radsm);
-			\draw[fill=black!50] (\xwallone,\ywallone-\radrp-\bump) circle (\radsm);
 			
 			\draw (\xwallone,\ywallone) circle (\radlg);
 			\draw[fill=black] (\xwallone,\ywallone) circle (\radsm);
+			\draw[pattern=north west lines, pattern color=black] (\xwallone-0.1,\ywallone+\radrp+\bump) rectangle (\xwallone+0.1,\ywallone-\bump-\radrp); 
+			\draw[fill=black!50] (\xwallone,\ywallone+\radrp+\bump) circle (\radsm);
+			\draw[fill=black!50] (\xwallone,\ywallone-\radrp-\bump) circle (\radsm);
 		
 			\draw (\xone,\yone) -- (\xone,\yone-\a*0.15) -- (\xone-0.5,\yone-\a*0.2) -- (\xone+0.5,\yone-\a*0.2) -- (\xone,\yone-\a*0.15);
-			\draw[fill=black!50] (\xone-1,\yone-\a*0.2) rectangle (\xone+1,\yone-\a*0.2-2); 
-			
+			\draw[fill=black!50] (\xone-1,\yone-\a*0.2) rectangle (\xone+1,\yone-\a*0.2-2); 			
 			\draw[line width=\width] (\xone-\radrp,\a) -- (\xone-\radrp,\yone); 
 			\centerarc[line width=\width](\xone,\yone)(180:360:\radrp);
 			\draw[line width=\width](\xone+\radrp,\yone) -- (\xthree,\ythree);

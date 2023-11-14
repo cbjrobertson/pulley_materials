@@ -1,0 +1,2 @@
+find . -type f \( -iname '*.pdf' -o -iname '*.aux' -o -iname '*.log' -o -iname '*.gz' \) -delete
+find ./original_materials -name "*.pdf" -exec mv {} ./pdfs \;

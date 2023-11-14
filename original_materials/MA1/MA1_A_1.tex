@@ -6,8 +6,6 @@
 \usepackage{float}
 \usepackage{pdflscape}
 
-
-
 \def\centerarc[#1](#2)(#3:#4:#5){\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5);}
 
 \pagestyle{empty}
@@ -40,17 +38,15 @@
 			
 			\draw[fill=white](\xtwo,\ytwo) circle (\radlg);
 			\draw[fill=black] (\xtwo,\ytwo) circle (\radsm);
+			\draw[pattern=north west lines, pattern color=black] (\xtwo-0.1,\ytwo+\radrp+\barbump) rectangle (\xtwo+0.1,\ytwo-\radrp-\barbump); 
 			\draw[fill=black!50] (\xtwo,\ytwo+\radrp+\barbump) circle (\radsm);
 			\draw[fill=black!50] (\xtwo,\ytwo-\radrp-\barbump) circle (\radsm);
-			\draw[pattern=north west lines, pattern color=black] (\xtwo-0.1,\ytwo+\radrp+\barbump) rectangle (\xtwo+0.1,\ytwo-\radrp-\barbump); 
-			
-			
+					
 			\draw[line width=\width] (\xone-0.5-\radrp,\a-\hlena-0.5) -- (\xone-\radrp,\a-\hlena) -- (\xone+0.5-\radrp,\a-\hlena-0.5);
 			\draw[fill=black!50] (\xone-1-\radrp,\a-\hlena-0.5) rectangle (\xone+1-\radrp,\a-\hlena-2-0.5); 
 
 			\draw[line width=\width] (\xone-\radrp,\yone) -- (\xone-\radrp,\a-\hlena);
 			\centerarc[line width=\width](\xone,\yone)(0:180:\radrp);
-			
 			\draw[line width=\width](\xone+\radrp,\yone) -- (\xtwo-\radrp,\ytwo);
 			\centerarc[line width=\width](\xtwo,\ytwo)(180:270:\radrp);
 			\draw[line width=\width]({\xtwo+\radrp*cos(270)},{\ytwo+\radrp*sin(270)}) -- (\dx-0.4,\dy+0.1);

@@ -3,6 +3,7 @@
 \usepackage{subcaption}
 \usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{tikzsymbols}
 \usetikzlibrary{calc,patterns,shapes.geometric}
 \usepackage{float}
 \usepackage{pdflscape}
@@ -27,7 +28,7 @@
 			\def\ythree{\a-0.75*\a}
 			\def\xh{3.2}
 			\def\hlen{\a}
-			\def\width{1mm}
+			\def\width{0.5mm}
 			\def\bump{0.1}
 			
 			\draw[fill=black] (-2,\a) rectangle (6,\a+0.125);
@@ -52,7 +53,6 @@
 			\centerarc[line width=\width](\xthree,\ythree)(180:370:\radrp);
 			\draw[line width=\width] (\xthree+\radrp,\ythree-0.01) -- (\xtwo-\radrp,\ytwo);
 			\centerarc[line width=\width](\xtwo,\ytwo)(0:180:\radrp);
-			
 			\draw[line width=\width](\xh+1,\a-\hlen+0.5) -- (\xtwo+\radrp,\ytwo);
 			\draw[line width=\width] (\xh,\a-\hlen+0.5) -- (\xthree,\ythree);
 			

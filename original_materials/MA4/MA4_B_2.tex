@@ -54,26 +54,22 @@
 			\draw[thick]  (\xtwo,\hlen+2) -- (\xtwo+0.5,\hlen+2.5) -- (\xtwo+1,\hlen+2);
 			\draw[fill=black!50] (\xtwo-1,\hlen+2) rectangle (\xtwo+1,\hlen);
 			
+			\draw (\xwallone,\ywallone) circle (\radlg);
+			\draw[fill=black] (\xwallone,\ywallone) circle (\radsm);
 			\draw[pattern=north west lines, pattern color=black] (\xwallone-0.1,\ywallone+\radrp+\bump) rectangle (\xwallone+0.1,\ywallone-\radrp-\bump); 
 			\draw[fill=black!50] (\xwallone,\ywallone+\radrp+\bump) circle (\radsm);
 			\draw[fill=black!50] (\xwallone,\ywallone-\radrp-\bump) circle (\radsm);
 			
-			\draw (\xwallone,\ywallone) circle (\radlg);
-			\draw[fill=black] (\xwallone,\ywallone) circle (\radsm);
-			
+			\draw (\xwalltwo,\ywalltwo) circle (\radlg);
+			\draw[fill=black] (\xwalltwo,\ywalltwo) circle (\radsm);
 			\draw[pattern=north west lines, pattern color=black] (\xwalltwo-\radrp-\bump,\ywalltwo+0.1) rectangle (\xwalltwo+\radrp+\bump,\ywalltwo-0.1); 
 			\draw[fill=black!50] (\xwalltwo-\radrp-\bump,\ywalltwo) circle (\radsm);
 			\draw[fill=black!50] (\xwalltwo+\radrp+\bump,\ywalltwo) circle (\radsm);
-			
-			\draw (\xwalltwo,\ywalltwo) circle (\radlg);
-			\draw[fill=black] (\xwalltwo,\ywalltwo) circle (\radsm);
 					
 			\draw[line width=\width] (\dx+0.5,\a+1) -- 	(\xwalltwo-\radrp*0.85, \ywalltwo+\radrp*0.55);
 			\centerarc[line width=\width](\xwalltwo,\ywalltwo)(135:180:\radrp);
-			
 			\draw[line width=\width] (\xwalltwo-\radrp, \ywalltwo) -- (\xwallone-\radrp, \ywallone);
 			\centerarc[line width=\width](\xwallone,\ywallone)(180:270:\radrp);
-			
 			\draw[line width=\width](\xwallone,\ywallone-\radrp) -- (\xone,\yone - \radrp); 
 			\centerarc[line width=\width](\xone,\yone)(270:360:\radrp);
 			\draw[line width=\width] (\xone+\radrp,\yone) -- (\xtwo-\radrp,\ytwo);

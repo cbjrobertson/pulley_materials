@@ -56,13 +56,11 @@
 			\draw (\xfive,\yl) circle (\radlg);
 			\draw[fill=black] (\xfive,\yl) circle (\radsm);
 			
-			
+			\draw (\xwalltwo,\ywalltwo) circle (\radlg);
+			\draw[fill=black] (\xwalltwo,\ywalltwo) circle (\radsm);
 			\draw[pattern=north west lines, pattern color=black] (\xwalltwo-\radrp-\bump, \ywalltwo+0.1) rectangle (\xwalltwo+\radrp+\bump,\ywalltwo-0.1); 
 			\draw[fill=black!50] (\xwalltwo-\radrp-\bump,\ywalltwo) circle (\radsm);
 			\draw[fill=black!50] (\xwalltwo+\radrp+\bump,\ywalltwo) circle (\radsm);
-			
-			\draw (\xwalltwo,\ywalltwo) circle (\radlg);
-			\draw[fill=black] (\xwalltwo,\ywalltwo) circle (\radsm);
 			
 			\draw[thick] (\xfour,\yl) -- (\xtwo,\yl-\hlen)  -- (\xfive,\yl);
 			\draw[thick]  (\xtwo-0.5,\yl-\hlen-0.7) -- (\xtwo,\yl-\hlen) -- (\xtwo+0.5,\yl-\hlen-0.7);
@@ -78,11 +76,9 @@
 			\centerarc[line width=\width](\xfive,\yl)(180:360:\radrp);
 			\draw[line width=\width] (\xfive+\radrp,\yl) -- (\xthree-\radrp,\yh);
 			\centerarc[line width=\width](\xthree,\yh)(0:180:\radrp);
-			
 			\draw[line width=\width](\xthree+\radrp,\yh) --  (\xwalltwo-\radrp,\ywalltwo); 
 			\centerarc[line width=\width](\xwalltwo,\ywalltwo)(180:220:\radrp);
 			\draw[line width=\width]({\xwalltwo+\radrp*cos(220)},{\ywalltwo+\radrp*sin(220)}) -- (11, -2);
-			
 			
 			\node at (11.3, -2) {\Strichmaxerl[10][-35][-50]};
 			

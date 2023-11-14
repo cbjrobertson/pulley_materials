@@ -27,7 +27,7 @@
 			\def\ythree{\a-0.75*\a}
 			\def\xh{3.2}
 			\def\hlen{\a}
-			\def\width{1mm}
+			\def\width{0.5mm}
 			\def\ywallone{\yone}
 			\def\xwallone{\xone-2.5}
 			\def\bump{0.3}
@@ -56,14 +56,12 @@
 			
 			\draw[line width=\width](-0.7,-1.9) -- 	 (\xwallone-\radrp, \ywallone);
 			\centerarc[line width=\width](\xwallone,\ywallone)(90:180:\radrp);
-			
 			\draw[line width=\width](\xwallone, \ywallone+\radrp) -- (\xone,\yone+\radrp);
 			\centerarc[line width=\width](\xone,\yone)(0:90:\radrp);
 			\draw[line width=\width](\xone+\radrp,\yone) -- (\xthree-\radrp,\ythree);
 			\centerarc[line width=\width](\xthree,\ythree)(180:370:\radrp);
 			\draw[line width=\width] (\xthree+\radrp,\ythree-0.01) -- (\xtwo-\radrp,\ytwo);
 			\centerarc[line width=\width](\xtwo,\ytwo)(0:180:\radrp);
-			
 			\draw[line width=\width](\xh+1,\a-\hlen+0.5) -- (\xtwo+\radrp,\ytwo);
 			\draw[line width=\width] (\xh,\a-\hlen+0.5) -- (\xthree,\ythree);
 			

@@ -42,9 +42,6 @@
 			\draw[fill=white](\xtwo,\ytwo) circle (\radlg);
 			\draw[fill=black] (\xtwo,\ytwo) circle (\radsm);
 			\draw[line width=\width]  (\xtwo,-3) -- (\xtwo,\ytwo);
-%			\draw[fill=black!50] (\xtwo,\ytwo+\radrp+\barbump) circle (\radsm);
-%			\draw[fill=black!50] (\xtwo,\ytwo-\radrp-\barbump) circle (\radsm);
-%			\draw[pattern=north west lines, pattern color=black] (\xtwo-0.1,\ytwo+\radrp+\barbump) rectangle (\xtwo+0.1,\ytwo-\radrp-\barbump); 
 			
 			\draw[fill=white](\xthree,\ythree) circle (\radlg);
 			\draw[fill=black] (\xthree,\ythree) circle (\radsm);
@@ -59,7 +56,6 @@
 			\centerarc[line width=\width](\xtwo,\ytwo)(180:360:\radrp);
 			\draw[line width=\width](\xtwo+\radrp,\ytwo) -- (\xthree-\radrp,\ythree);
 			\centerarc[line width=\width](\xthree,\ythree)(0:180:\radrp);
-			
 			\draw[line width=\width](\xthree+\radrp,\ythree) -- (\dx-0.4,\dy+0.1);
 			
 			\node at (\dx,\dy) {\Strichmaxerl[10][-35][-50]};
