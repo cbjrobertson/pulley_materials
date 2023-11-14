@@ -1,8 +1,3 @@
-simple_pulleys/
-original_materials/base/
-original_materials/question/
-original_materials/*.pkl
-original_materials/*.xlsx
 original_materials/MA*/*.aux
 original_materials/MA*/*.pdf
 original_materials/MA*/*.log
