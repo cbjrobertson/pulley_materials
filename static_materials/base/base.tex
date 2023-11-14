@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikzsymbols}
+\usetikzlibrary{calc}
+\usepackage{float}
+\usepackage{pdflscape}
+\usepackage{geometry}
+\geometry{a4paper, landscape, margin=1cm}
+\def\centerarc[#1](#2)(#3:#4:#5)% Syntax: [draw options] (center) (initial angle:final angle:radius)
+{\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5);}
+\captionsetup[subfigure]{justification=justified,singlelinecheck=false}
+\pagestyle{empty}
+\begin{document}
+	\centering
+	\begin{figure}[H]
+		\begin{subfigure}[b]{0.5\textwidth}
+			\subcaption{Figure 1}
+			\begin{tikzpicture}
+			%%%%% REPLACE 1 %%%%%
+			\end{tikzpicture}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.5\textwidth}
+			\subcaption{Figure 2}
+			\begin{tikzpicture}
+			%%%%% REPLACE 2 %%%%%
+			\end{tikzpicture}
+		\end{subfigure}
+	\end{figure}	
+\end{document}
