@@ -7,8 +7,6 @@
 \usetikzlibrary{calc,patterns,shapes.geometric}
 \usepackage{float}
 \usepackage{pdflscape}
-\usepackage{geometry}
-
 
 \def\centerarc[#1](#2)(#3:#4:#5){\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5);}
 
@@ -19,8 +17,8 @@
 		\begin{tikzpicture}
 			%%%%% START %%%%%
 			\def\a{10}
-			\def\radlg{\radrp-0.1}
-			\def\radrp{1}
+			\def\radlg{1}
+			\def\radrp{1.1}
 			\def\radsm{0.1}
 			\def\xone{1}
 			\def\yone{\a-0.15*\a}
@@ -29,8 +27,7 @@
 			\def\xthree{\xone+1.7}
 			\def\ythree{\a-0.75*\a}
 			\def\xh{3.2}
-			\def\hlentwo{\yone+0.26*\a}
-			\def\hlen{\yone+0.26*\a}
+			\def\hlen{\a}
 			\def\width{1mm}
 			\def\bump{0.1}
 			
@@ -47,20 +44,18 @@
 			\draw (\xthree,\ythree) circle (\radlg);
 			\draw[fill=black] (\xthree,\ythree) circle (\radsm);
 			
+			\draw[line width=\width]  (\xh-0.5,\a-\hlen) -- (\xh,\a-\hlen+0.5) -- (\xh+0.5,\a-\hlen) -- (\xh+1,\a-\hlen+0.5) -- (\xh+1.5,\a-\hlen);
+			\draw[fill=black!50] (\xh-0.5,\a-\hlen) rectangle (\xh+1.6,\a-\hlen-2);
 			
-			\draw[thick]  (\xh-0.5,\ytwo-\hlentwo-0.5) -- (\xh,\ytwo-\hlentwo) -- (\xh+0.5,\ytwo-\hlentwo-0.5);
-			\draw[thick]  (\xh+0.5,\yone-\hlen-0.5) -- (\xh+1,\yone-\hlen) -- (\xh+1.5,\yone-\hlen-0.5);
-			\draw[fill=black!50] (\xh-0.5,\yone-\hlen-0.5) rectangle (\xh+1.6,\yone-\hlen-0.5-2.1);
-			
-		
 			\draw[line width=\width](-0.7,-1.9) -- (\xone-\radrp,\yone);
 			\centerarc[line width=\width](\xone,\yone)(0:180:\radrp);
 			\draw[line width=\width](\xone+\radrp,\yone) -- (\xthree-\radrp,\ythree);
 			\centerarc[line width=\width](\xthree,\ythree)(180:370:\radrp);
 			\draw[line width=\width] (\xthree+\radrp,\ythree-0.01) -- (\xtwo-\radrp,\ytwo);
 			\centerarc[line width=\width](\xtwo,\ytwo)(0:180:\radrp);
-			\draw[line width=\width](\xh+1,\yone-\hlen) -- (\xtwo+\radrp,\ytwo);
-			\draw[line width=\width] (\xh,\yone-\hlen) -- (\xthree,\ythree);
+			
+			\draw[line width=\width](\xh+1,\a-\hlen+0.5) -- (\xtwo+\radrp,\ytwo);
+			\draw[line width=\width] (\xh,\a-\hlen+0.5) -- (\xthree,\ythree);
 			
 			\node at (-0.2,-2) {\Strichmaxerl[10][-20][0]};
 			

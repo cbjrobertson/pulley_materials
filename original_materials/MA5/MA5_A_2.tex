@@ -7,13 +7,8 @@
 \usepackage{tikzsymbols}
 \usetikzlibrary{calc,patterns,shapes.geometric}
 \usepackage{float}
-\usepackage{pdflscape}
-\usepackage{geometry}
-
-
 
 \def\centerarc[#1](#2)(#3:#4:#5){\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5);}
-
 
 \pagestyle{empty}
 \begin{document}
@@ -22,8 +17,8 @@
 		\begin{tikzpicture}
 			%%%%% START %%%%%
 			\def\a{10}
-			\def\radlg{\radrp-0.1}
-			\def\radrp{1}
+			\def\radlg{1}
+			\def\radrp{1.1}
 			\def\radsm{0.1}
 			\def\yh{\a-0.15*\a}
 			\def\yl{5}
@@ -35,8 +30,8 @@
 			\def\dx{8.3}
 			\def\dy{-1.9}
 			\def\dw{1.75mm}
-			\def\hlen{5.5}
-			\def\width{1mm}
+			\def\hlen{5}
+			\def\width{0.5mm}
 			\def\ywallone{\a-\a+6}
 			\def\xwallone{\xthree+1.5}
 			\def\ywalltwo{\a-\a+2}
@@ -70,9 +65,9 @@
 			\draw (\xwallone,\ywallone) circle (\radlg);
 			\draw[fill=black] (\xwallone,\ywallone) circle (\radsm);
 			
-			\draw[pattern=north west lines, pattern color=black] (\xwalltwo-0.1,\ywalltwo+\radrp+\bump) rectangle (\xwalltwo+0.1,\ywalltwo-\radrp-\bump); 
-			\draw[fill=black!50] (\xwalltwo,\ywalltwo+\radrp+\bump) circle (\radsm);
-			\draw[fill=black!50] (\xwalltwo,\ywalltwo-\radrp-\bump) circle (\radsm);
+			\draw[pattern=north west lines, pattern color=black] (\xwalltwo-\radrp-\bump,\ywalltwo-0.1) rectangle (\xwalltwo+\radrp+\bump,\ywalltwo+0.1); 
+			\draw[fill=black!50] (\xwalltwo-\radrp-\bump,\ywalltwo) circle (\radsm);
+			\draw[fill=black!50] (\xwalltwo+\radrp+\bump,\ywalltwo) circle (\radsm);
 			
 			\draw (\xwalltwo,\ywalltwo) circle (\radlg);
 			\draw[fill=black] (\xwalltwo,\ywalltwo) circle (\radsm);
