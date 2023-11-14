@@ -50,9 +50,8 @@
 			
 			\draw (\xwalltwo,\ywalltwo) circle (\radlg);
 			\draw[fill=black] (\xwalltwo,\ywalltwo) circle (\radsm);
-			\draw[pattern=north west lines, pattern color=black] (\xwalltwo-0.1,\ywalltwo+\radrp+\bump) rectangle (\xwalltwo+0.1,\ywalltwo-\radrp-\bump); 
-			\draw[fill=black!50] (\xwalltwo,\ywalltwo+\radrp+\bump) circle (\radsm);
-			\draw[fill=black!50] (\xwalltwo,\ywalltwo-\radrp-\bump) circle (\radsm);
+			\draw[thick] (\xwalltwo,\ywalltwo) -- (\xwalltwo+0.25,-3);
+
 			
 			\draw[thick]  (\xbox,\ybox) -- (\xbox+0.5,\ybox+0.5) -- (\xbox+1,\ybox) -- (\xbox+1.5,\ybox+0.5) -- (\xbox+2,\ybox);
 			\draw[fill=black!50] (\xbox,\ybox) rectangle (\xbox+2,\ybox-2); 

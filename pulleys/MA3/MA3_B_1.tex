@@ -26,9 +26,9 @@
 			\def\xthree{\xone+1.7}
 			\def\ythree{\a-0.75*\a}
 			\def\xh{3.2}
-			\def\hlen{\a}
+			\def\hlen{\a+0.1}
 			\def\width{0.5mm}
-			\def\ywallone{\yone}
+			\def\ywallone{\yone-0.1}
 			\def\xwallone{\xone-2.5}
 			\def\bump{0.3}
 			
@@ -36,7 +36,7 @@
 			
 			\draw (\xone,\yone) circle (\radlg);
 			\draw[fill=black] (\xone,\yone) circle (\radsm);
-			\draw[thick] (\xone,\yone) -- (\xone,\a);
+			\draw[thick] (\xone,\yone) -- (\xone+0.3,\a);
 			
 			\draw (\xtwo,\ytwo) circle (\radlg);
 			\draw[fill=black] (\xtwo,\ytwo) circle (\radsm);
@@ -50,9 +50,7 @@
 			
 			\draw (\xwallone,\ywallone) circle (\radlg);
 			\draw[fill=black] (\xwallone,\ywallone) circle (\radsm);
-			\draw[pattern=north west lines, pattern color=black] (\xwallone-0.1,\ywallone+\radrp+\bump) rectangle (\xwallone+0.1,\ywallone-\radrp-\bump); 
-			\draw[fill=black!50] (\xwallone,\ywallone+\radrp+\bump) circle (\radsm);
-			\draw[fill=black!50] (\xwallone,\ywallone-\radrp-\bump) circle (\radsm);
+			\draw[thick] (\xwallone,\ywallone) -- (\xwallone-0.3,\a);
 			
 			\draw[line width=\width](-0.7,-1.9) -- 	 (\xwallone-\radrp, \ywallone);
 			\centerarc[line width=\width](\xwallone,\ywallone)(90:180:\radrp);

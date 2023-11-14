@@ -40,7 +40,7 @@
 
 				\draw (\xone,\yone) circle (\radlg);
 				\draw[fill=black] (\xone,\yone) circle (\radsm);
-				\draw[thick] (\xone,\yone) -- (\xone,\a);
+				\draw[thick] (\xone,\yone) -- (\xone+0.3,\a);
 
 				\draw (\xtwo,\ytwo) circle (\radlg);
 				\draw[fill=black] (\xtwo,\ytwo) circle (\radsm);
@@ -54,9 +54,7 @@
 				
 				\draw (\xwallone,\ywallone) circle (\radlg);
 				\draw[fill=black] (\xwallone,\ywallone) circle (\radsm);
-				\draw[pattern=north west lines, pattern color=black] (\xwallone-0.1,\ywallone+\radrp+\bump) rectangle (\xwallone+0.1,\ywallone-\radrp-\bump); 
-				\draw[fill=black!50] (\xwallone,\ywallone+\radrp+\bump) circle (\radsm);
-				\draw[fill=black!50] (\xwallone,\ywallone-\radrp-\bump) circle (\radsm);
+				\draw[thick] (\xwallone,\ywallone) -- (\xwallone-0.3,\a);
 			
 				\draw (\xwalltwo,\ywalltwo) circle (\radlg);
 				\draw[fill=black] (\xwalltwo,\ywalltwo) circle (\radsm);
