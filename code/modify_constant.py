@@ -6,9 +6,8 @@ import re
 # constants
 # =============================================================================
 a_values = [10, 12, 14]
-radgl_values = [0.5, 0.75, 1]
+radlg_values = [0.5, 0.75, 1]
 width_values = ["0.5mm", "0.75mm", "1mm"] #need to purmute this, too
-
 
 #PATH = "../pulley_materials/pulleys/MA*/*.tex" # I must have changed the dir name from pulley_materials -> pulleys :?
 PATH = "../pulleys/MA*/*.tex"
@@ -49,11 +48,13 @@ def save_modified_tikz(name, content):
 # =============================================================================
 # some debugging vals
 # =============================================================================
-a = 40
-width = "0.75mm"
-radlg=0.5
-tikz_content=tikz_files["MA1_B_0.tex"]
-print(replace_values(tikz_content, a, radlg, width))
+# =============================================================================
+# a = 40
+# width = "0.75mm"
+# radlg=0.5
+# tikz_content=tikz_files["MA1_B_0.tex"]
+# print(replace_values(tikz_content, a, radlg, width))
+# =============================================================================
 # =============================================================================
 # main script
 # =============================================================================
@@ -70,7 +71,7 @@ if __name__ == "__main__":
             # Iterate over each set of values
             for i in range(len(a_values)):
                 # Replace the values in the content
-                modified_content = replace_values(content, a_values[i], radgl_values[i], width_values[i])
+                modified_content = replace_values(content, a_values[i], radlg_values[i], width_values[i])
                 # Construct the new file name
                 modified_name = f"{name[:-4]}_a{a_values[i]}_radgl{radgl_values[i]}_width{width_values[i]}.tex"
                 # Save the modified file
