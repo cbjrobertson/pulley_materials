@@ -1,6 +1,6 @@
-original_materials/MA*/*.aux
-original_materials/MA*/*.pdf
-original_materials/MA*/*.log
-original_materials/MA*/*.gz
+pulleys/MA*/*.aux
+pulleys/MA*/*.pdf
+pulleys/MA*/*.log
+pulleys/MA*/*.gz
 
 .DS_Store
