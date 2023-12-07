@@ -19,7 +19,34 @@ from math import ceil
 START = "%%%%% START %%%%%"
 END = "%%%%% END %%%%%"
 R = "%%%%% REPLACE %%%%%"
-PATH = "../simple_pulleys/*.tex"
+PATH = "../pulleys/tex/crossed/simple/*.tex"
+OUTPUT_PATH = "../pulleys/tex/crossed/random/rand_{}.tex"
+BASE_PATH = "../pulleys/static_materials/article_base.tex"
+CROSSED = True
+
+# =============================================================================
+# parse args
+# =============================================================================
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("-i", "--inpath", help="inpath directory to load tikz files")
+parser.add_argument("-o", "--outpath", help="output directory to save modified tikz files")
+parser.add_argument("--crossed", action="store_true", help="whether script is processing crossed tikz designs or not")
+parser.add_argument("-b", "--basepath", help="path to the base .tex file")
+parser.set_defaults(crossed=None)
+
+args = vars(parser.parse_args())
+
+if all(vals == None for vals in args.values()):
+    inpath = PATH
+    outpath = OUTPUT_PATH
+    crossed = CROSSED
+    bpath = BASE_PATH
+else:
+    inpath = args['inpath'] 
+    outpath = args['outpath']
+    crossed = args["crossed"]
+    bpath = args["basepath"]
 
 # =============================================================================
 # data
@@ -123,14 +150,20 @@ def get_coords(
     return x_start, x_end, y_start, y_end 
 
 def lookup_len(
-        key
+        key,
+        crossed
         ):
-    return df.loc[df.uneek == key,"relevent_len"].iloc[0]
+    if crossed:
+        lookup_key = f"simp_{'_'.join([x for x in key.split('_')][1:4])}"
+    else:
+        lookup_key = key
+    return df.loc[df.design_name == lookup_key,"relevent_len"].iloc[0]
 
 def get_addlines(
-        key
+        key,
+        crossed
         ):
-    return max_lines - lookup_len(key)
+    return max_lines - lookup_len(key,crossed)
 
 def get_insert_point(
         lst
@@ -141,14 +174,15 @@ def get_insert_point(
 def add_lines(
         eg,
         key,
+        crossed,
         extra_lines=5
         ):
-    st = make_lst(eg)
+    lst = make_lst(eg)
     x_range, y_range = get_range(lst)
     start = get_insert_point(lst)
     sec_a = lst[:start]
     sec_b = lst[start:]
-    num_lines = get_addlines(key)
+    num_lines = get_addlines(key, crossed)
     rand_ext = randint(0,extra_lines)
     sec_add = [""]
     for i in range(num_lines+rand_ext):
@@ -158,16 +192,28 @@ def add_lines(
             sec_add += [""]
     return sec_a + sec_add + sec_b
 
-if __name__ == "__main__":
-    tikz = load_tikz(PATH)
-    with open("../static_materials/base/rand_base.tex","r") as f:
+def main(
+        inpath, 
+        outpath,
+        crossed,
+        bpath
+        ):
+    tikz = load_tikz(inpath)
+    with open(bpath,"r") as f:
         r_base = f.read()
     for key, eg in tikz.items():
-       rand = add_lines(eg, key)
-       rand_tabbed = "\n".join([f"\t\t{line}" for line in rand])
+       rand = add_lines(eg, key, crossed)
+       if bpath.endswith("article_base.tex"):
+           tab = "\t\t\t{}"
+       else:
+           tab = "\t\t{}"
+       rand_tabbed = "\n".join([tab.format(line) for line in rand])
        rand_out = r_base.replace(R,rand_tabbed)
-       with open(f"../random_pulleys/rand_{key.lstrip('simp_')}.tex", "w") as f:
+       with open(outpath.format(key.lstrip('simp_')), "w") as f:
            f.write(rand_out)
+           
+if __name__ == "__main__":
+    main(inpath, outpath, crossed, bpath)
     
 
     

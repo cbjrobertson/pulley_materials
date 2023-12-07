@@ -10,7 +10,9 @@ Created on Thu Aug  3 11:19:18 2023
 # =============================================================================
 import pandas as pd
 import glob
-from numpy import cos, sin
+from numpy import cos as _cos
+from numpy import sin as _sin
+from math import pi
 
 # =============================================================================
 # constants
@@ -18,12 +20,44 @@ from numpy import cos, sin
 START = "%%%%% START %%%%%"
 END = "%%%%% END %%%%%"
 R = "%%%%% REPLACE %%%%%"
-PATH = "../modified_pulleys/*.tex"
-PRECISION = 3
+PATH = "../pulleys/original_designs/MA*/*.tex"
+OUTPUT_PATH = "../pulleys/tex/crossed/simple/simp_{}.tex"
+BASE_PATH = "../pulleys/static_materials/standalone_base.tex"
+PRECISION = 4
+
+# =============================================================================
+# parse args
+# =============================================================================
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("-i", "--inpath", help="inpath directory to load tikz files")
+parser.add_argument("-o", "--outpath", help="output directory to save modified tikz files")
+parser.add_argument("-b", "--basepath", help="path to the base .tex file")
+
+args = vars(parser.parse_args())
+
+if all(vals == None for vals in args.values()):
+    inpath = PATH
+    outpath = OUTPUT_PATH
+    bpath = BASE_PATH
+else:
+    inpath = args['inpath'] 
+    outpath = args['outpath']
+    bpath = args["basepath"]
 
 # =============================================================================
 # functions
 # =============================================================================
+
+def convert_deg(deg):
+    return deg/180*pi
+
+def cos(deg):
+    return _cos(convert_deg(deg))
+
+def sin(deg):
+    return _sin(convert_deg(deg))
+    
 def load_tikz(path):
     keys = [key.split("/")[-1].rstrip(".tex") for key in glob.glob(path)]
     pics = [open(x,"r").read() for x in glob.glob(path)]
@@ -156,14 +190,25 @@ def sub_in_evaluated(ts):
         ts = string
     return ts
 
-if __name__ == "__main__":
-    pics = load_tikz(PATH)
-    with open("../static_materials/base/rand_base.tex","r") as f:
+def main(
+        inpath,
+        outpath,
+        bpath
+        ):
+    pics = load_tikz(inpath)
+    with open(bpath,"r") as f:
         s_base = f.read()
     for name, pic in pics.items():
         ts = sub_numbers_for_vars(pic)
         ts_eval = sub_in_evaluated(ts)
-        ts_tabbed = "\n".join(["\t\t{}".format(line.replace('\t','').lstrip()) for line in ts_eval.split("\n")])
+        if bpath.endswith("article_base.tex"):
+            tab = "\t\t\t{}"
+        else:
+            tab = "\t\t{}"
+        ts_tabbed = "\n".join([tab.format(line.replace('\t','').lstrip()) for line in ts_eval.split("\n")])
         ts_out = s_base.replace(R,ts_tabbed)
-        with open(f"../simple_pulleys/simp_{name}.tex", "w") as f:
+        with open(outpath.format(name), "w") as f:
             f.write(ts_out)
+    
+if __name__ == "__main__":
+    main(inpath, outpath, bpath)

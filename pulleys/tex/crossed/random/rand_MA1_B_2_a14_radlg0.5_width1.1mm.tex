@@ -1,0 +1,79 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikzsymbols}
+\usetikzlibrary{calc,patterns,shapes.geometric}
+\pagestyle{empty}
+\usepackage[margin=0pt]{geometry}
+\geometry{papersize={14in,12in}}
+
+\def\centerarc[#1](#2)(#3:#4:#5){\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5);}
+
+\begin{document}
+	\begin{figure}
+		\centering
+		\begin{tikzpicture}
+			%%%%% START %%%%%
+			
+			\draw[fill=black] (-2, 14) rectangle (10, 14.125);
+			
+			\draw (1, 12) circle (0.5);
+			\draw[fill=black] (1, 12) circle (0.1);
+			\draw[line width=1.1mm] (1, 14) -- (1, 12);
+			
+			\draw (3.5, 2.8) circle (0.5);
+			\draw[fill=black] (3.5, 2.8) circle (0.1);
+			\draw[line width=1.1mm] (3.5, 2.8) -- (3.0, 0);
+			
+			\draw[fill=white](8, 5.6) circle (0.5);
+			\draw[fill=black] (8, 5.6) circle (0.1);
+			\draw[fill=black!50] (8.8, 5.6) circle (0.1);
+			\draw[fill=black!50] (7.2, 5.6) circle (0.1);
+			\draw[pattern=north west lines, pattern color=black] (7.2, 5.7) rectangle (8.8, 5.5);
+			
+			\draw[line width=1.1mm](-0.1, 5.1) --  (0.4, 5.6) -- (0.9, 5.1);
+			\draw[fill=black!50] (-0.6, 5.1) rectangle (1.4, 3.1);
+			
+			\draw[line width=1.1mm](0.4, 12) -- (0.4, 5.6);
+			\centerarc[line width=1.1mm](1, 12)(180:0:0.6)
+			\draw[line width=1.1mm](1.6, 12) -- (2.9, 2.8);
+			\centerarc[line width=1.1mm](3.5, 2.8)(180:300:0.6);
+			\draw[line width=1.1mm](3.8, 2.2804) -- (8.3, 5.0804);
+			\centerarc[line width=1.1mm](8, 5.6)(300:390:0.6);
+			\draw[line width=1.1mm](8.5196, 5.9) -- (7.05, 11.8);
+			
+			\node at (6.75, 12) {\Strichmaxerl[10][-220][-30]};
+			\draw[fill=black] (5, 11) rectangle (7.1, 10.85);
+			
+			\node[line width=0.4mm, color=black!57] at (-4, 7) {\Strichmaxerl[4][19][21]};
+			
+			\draw [line width=0.7mm, color=black!35](13, 10) circle (0.2);
+			\draw [line width=0.2mm, color=black!18](10, 12) circle (2.4);
+			\node[line width=0.7mm, color=black!29] at (-9, 7) {\Strichmaxerl[6][48][82]};
+			
+			\node[line width=0.5mm, color=black!15] at (-8, 13) {\Strichmaxerl[2][22][85]};
+			
+			\draw [line width=0.4mm, color=black!95](-5, 7) circle (0.7);
+			
+			\draw[line width=0.6mm, color=black!35] (10, 10) rectangle (13, 12);
+			\node[line width=0.7mm, color=black!27] at (17, 7) {\Strichmaxerl[1][80][30]};
+			\draw [line width=0.3mm, color=black!39](18, 8) circle (0.4);
+			
+			\draw[line width=0.5mm, color=black!94](10, 8) -- (17, 9);
+			\draw[line width=0.5mm, color=black!76](13, 0) -- (17, 3);
+			\node[line width=0.6mm, color=black!10] at (11, 9) {\Strichmaxerl[5][26][23]};
+			\draw [line width=0.7mm, color=black!40](-8, 2) circle (1.3);
+			
+			\node[line width=0.4mm, color=black!69] at (-7, 11) {\Strichmaxerl[5][65][46]};
+			\draw[line width=0.7mm, color=black!79] (12, 3) rectangle (14, 7);
+			\node[line width=0.7mm, color=black!55] at (12, 6) {\Strichmaxerl[3][28][31]};
+			\draw[line width=0.5mm, color=black!49] (12, 6) rectangle (11, 13);
+			\draw [line width=0.2mm, color=black!48](17, 5) circle (1.8);
+			
+			\draw[fill=black] (-2, 0) rectangle (10, -0.15);
+			
+			%%%%% END %%%%%
+		\end{tikzpicture}
+	\end{figure}	
+\end{document}

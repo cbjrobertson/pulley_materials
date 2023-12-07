@@ -1,0 +1,52 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikzsymbols}
+\usetikzlibrary{calc,patterns,shapes.geometric}
+\pagestyle{empty}
+\usepackage[margin=0pt]{geometry}
+\geometry{papersize={14in,12in}}
+
+\def\centerarc[#1](#2)(#3:#4:#5){\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5);}
+
+\begin{document}
+	\begin{figure}
+		\centering
+		\begin{tikzpicture}
+			%%%%% START %%%%%
+			\draw[fill=black] (-2, 9) rectangle (10, 9.125);
+			
+			\draw (1, 7) circle (1.1);
+			\draw[fill=black] (1, 7) circle (0.1);
+			\draw[line width=0.8mm] (1, 9) -- (1, 7);
+			
+			\draw (3.5, 1.8) circle (1.1);
+			\draw[fill=black] (3.5, 1.8) circle (0.1);
+			\draw[line width=0.8mm] (3.5, 1.8) -- (3.0, 0);
+			
+			\draw[fill=white](8, 3.6) circle (1.1);
+			\draw[fill=black] (8, 3.6) circle (0.1);
+			\draw[fill=black!50] (9.4, 3.6) circle (0.1);
+			\draw[fill=black!50] (6.6, 3.6) circle (0.1);
+			\draw[pattern=north west lines, pattern color=black] (6.6, 3.7) rectangle (9.4, 3.5);
+			
+			\draw[line width=0.8mm](-0.7, 3.1) --  (-0.2, 3.6) -- (0.3, 3.1);
+			\draw[fill=black!50] (-1.2, 3.1) rectangle (0.8, 1.1);
+			
+			\draw[line width=0.8mm](-0.2, 7) -- (-0.2, 3.6);
+			\centerarc[line width=0.8mm](1, 7)(180:0:1.2000000000000002)
+			\draw[line width=0.8mm](2.2, 7) -- (2.3, 1.8);
+			\centerarc[line width=0.8mm](3.5, 1.8)(180:300:1.2000000000000002);
+			\draw[line width=0.8mm](4.1, 0.7608) -- (8.6, 2.5608);
+			\centerarc[line width=0.8mm](8, 3.6)(300:390:1.2000000000000002);
+			\draw[line width=0.8mm](9.0392, 4.2) -- (7.05, 6.8);
+			
+			\node at (6.75, 7) {\Strichmaxerl[10][-220][-30]};
+			\draw[fill=black] (5, 6) rectangle (7.1, 5.85);
+			
+			\draw[fill=black] (-2, 0) rectangle (10, -0.15);
+			%%%%% END %%%%%
+		\end{tikzpicture}
+	\end{figure}	
+\end{document}

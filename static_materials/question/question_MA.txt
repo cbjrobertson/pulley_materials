@@ -1,7 +1,0 @@
-Assume the pulley systems are idealized, with no friction and no rope stretch.
-
-My question is, which pulley system has higher mechanical advantage?
-
-A) Figure 1
-B) Figure 2
-If no difference, indicate "C"

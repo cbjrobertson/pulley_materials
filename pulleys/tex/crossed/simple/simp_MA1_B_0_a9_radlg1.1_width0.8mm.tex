@@ -1,0 +1,38 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikzsymbols}
+\usetikzlibrary{calc,patterns,shapes.geometric}
+\pagestyle{empty}
+\usepackage[margin=0pt]{geometry}
+\geometry{papersize={14in,12in}}
+
+\def\centerarc[#1](#2)(#3:#4:#5){\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5);}
+
+\begin{document}
+	\begin{figure}
+		\centering
+		\begin{tikzpicture}
+			%%%%% START %%%%%
+			\draw[fill=black] (-2, 9) rectangle (10, 9.125);
+			
+			\draw (1, 7) circle (1.1);
+			\draw[fill=black] (1, 7) circle (0.1);
+			\draw[line width=0.8mm] (1, 9) -- (1, 7);
+			
+			\draw[line width=0.8mm](-0.7, 3.1) --  (-0.2, 3.6) -- (0.3, 3.1);
+			\draw[fill=black!50] (-1.2, 3.1) rectangle (0.8, 1.1);
+			
+			\draw[line width=0.8mm](-0.2, 7) -- (-0.2, 3.6);
+			\centerarc[line width=0.8mm](1, 7)(90:180:1.2000000000000002)
+			\draw[line width=0.8mm](1, 8.2) -- (9, 7.1);
+			
+			\node at (9, 7) {\Strichmaxerl[10][-35][-50]};
+			\draw[fill=black] (5, 6) rectangle (10, 5.85);
+			
+			\draw[fill=black] (-2, -3) rectangle (10, -3.15);
+			%%%%% END %%%%%
+		\end{tikzpicture}
+	\end{figure}	
+\end{document}

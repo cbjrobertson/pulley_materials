@@ -9,12 +9,27 @@ import itertools
 # =============================================================================
 # constants
 # =============================================================================
-a_values = [10, 12, 14]
-radlg_values = [0.5, 0.75, 1]
-width_values = ["0.5mm", "0.75mm", "1mm"] #need to purmute this, too
-PATH = "../pulleys/MA*/*.tex"
-OUTPUT_PATH = "../modified_pulleys" 
+a_values = [9, 11.5, 14]
+radlg_values = [0.5, 0.8, 1.1]
+width_values = ["0.5mm","0.8mm", "1.1mm"] #need to purmute this, too
+PATH = "../pulleys/original_designs/MA*/*.tex"
+OUTPUT_PATH = "../pulleys/tex/crossed/crossed" 
 
+# =============================================================================
+# parse args
+# =============================================================================
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("-i", "--inpath", help="inpath directory to load tikz files")
+parser.add_argument("-o", "--outpath", help="output directory to save modified tikz files")
+args = vars(parser.parse_args())
+
+if all(vals == None for vals in args.values()):
+    inpath = PATH
+    outpath = OUTPUT_PATH
+else:
+    inpath = args['inpath'] 
+    outpath = args['outpath']
 
 # =============================================================================
 # Cross vals
@@ -49,27 +64,17 @@ def replace_values(tikz_content, a, radlg, width):
 
     return new_content
 
-def save_modified_tikz(name, content):
-    with open(os.path.join(OUTPUT_PATH, name), "w") as file:
+def save_modified_tikz(name, content, outpath):
+    with open(os.path.join(outpath, name), "w") as file:
         file.write(content)
 
 
-# =============================================================================
-# some debugging vals
-# =============================================================================
-# =============================================================================
-# a = 40
-# width = "0.75mm"
-# radlg=0.5
-# tikz_content=tikz_files["MA1_B_0.tex"]
-# print(replace_values(tikz_content, a, radlg, width))
-# =============================================================================
-# =============================================================================
-# main script
-# =============================================================================
-if __name__ == "__main__":
+def main(
+        inpath, 
+        outpath
+        ):
     # Load all TikZ files
-    tikz_files = load_tikz(PATH)
+    tikz_files = load_tikz(inpath)
     
     # Check if files were found
     if not tikz_files:
@@ -84,5 +89,12 @@ if __name__ == "__main__":
                 # Construct the new file name
                 modified_name = f"{name[:-4]}_a{a}_radlg{radlg}_width{width}.tex"
                 # Save the modified file
-                save_modified_tikz(modified_name, modified_content)
+                save_modified_tikz(modified_name, modified_content, outpath)
                 print(f"Saved modified file: {modified_name}")  # Print out confirmation
+    
+# =============================================================================
+# main script
+# =============================================================================
+if __name__ == "__main__":
+    main(inpath, outpath)
+

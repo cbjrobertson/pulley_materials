@@ -1,0 +1,56 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikzsymbols}
+\usetikzlibrary{calc,patterns,shapes.geometric}
+\pagestyle{empty}
+\usepackage[margin=0pt]{geometry}
+\geometry{papersize={14in,12in}}
+
+\def\centerarc[#1](#2)(#3:#4:#5){\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5);}
+
+\begin{document}
+	\begin{figure}
+		\centering
+		\begin{tikzpicture}
+			%%%%% START %%%%%
+			\draw[fill=black] (-6, 11.5) rectangle (5, 11.625);
+			
+			\draw (0, 4.6) circle (1.1);
+			\draw[fill=black] (0, 4.6) circle (0.1);
+			
+			\draw (1, 1.725) circle (1.1);
+			\draw[fill=black] (1, 1.725) circle (0.1);
+			
+			\draw (1.4, 9.2) circle (1.1);
+			\draw[fill=black] (1.4, 9.2) circle (0.1);
+			\draw[very thick] (1.4, 9.2) -- (1.4, 11.5);
+			
+			\draw (-2, -1.15) circle (1.1);
+			\draw[fill=black] (-2, -1.15) circle (0.1);
+			\draw[thick] (-2, -1.15) -- (-1.75, -3);
+			
+			
+			\draw[thick]  (0.75, -0.575) -- (1.25, -0.075) -- (1.75, -0.575) -- (2.25, -0.075) -- (2.75, -0.575);
+			\draw[fill=black!50] (0.75, -0.575) rectangle (2.75, -2.575);
+			\draw[line width=1.1mm] (-5.05, -1.8) -- (-2, -2.35);
+			\centerarc[line width=1.1mm](-2, -1.15)(270:360:1.2000000000000002);
+			\draw[line width=1.1mm] (-0.8, -1.15) -- (-1.2, 4.6);
+			\draw[line width=1.1mm] (0, 4.6) -- (0.2, 9.0);
+			\draw[line width=1.1mm, fill=black](0.1, 8.4) rectangle (0.3, 9.0);
+			\centerarc[line width=1.1mm](0, 4.6)(-20:180:1.2000000000000002);
+			\draw[line width=1.1mm] (1.1276, 4.1896) -- (-0.1276, 2.1354);
+			\centerarc[line width=1.1mm](1, 1.725)(160:380:1.2000000000000002);
+			\draw[line width=1.1mm] (2.1276, 2.1354) -- (0.2, 9.2);
+			\draw[line width=1.1mm](1, 1.725) -- (1.25, -0.075);
+			\centerarc[line width=1.1mm](1.4, 9.2)(0:180:1.2000000000000002);
+			\draw[line width=1.1mm] (2.6, 9.2) -- (2.25, -0.075);
+			
+			\node at (-5.5, -1.9) {\Strichmaxerl[10][50][35]};
+			
+			\draw[fill=black] (-6, -3) rectangle (5, -3.15);
+			%%%%% END %%%%%
+		\end{tikzpicture}
+	\end{figure}	
+\end{document}
