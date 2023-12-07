@@ -1,0 +1,53 @@
+\documentclass[border=10pt]{standalone}
+
+\usepackage{tikz}
+\usepackage{tikzsymbols}
+\usetikzlibrary{calc,patterns,shapes.geometric}
+
+\def\centerarc[#1](#2)(#3:#4:#5){\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5);}
+
+\begin{document}
+	\begin{tikzpicture}
+		%%%%% START %%%%%
+		
+		\draw[fill=black] (-2, 10) rectangle (5, 10.125);
+		
+		\draw (1, 7) circle (0.5);
+		\draw[fill=black] (1, 7) circle (0.1);
+		\draw (1, 10) -- (1, 7);
+		
+		\draw[line width=0.5mm, color=black!29](9, -1) -- (7, 2);
+		
+		\draw [line width=0.4mm, color=black!12](9, 3) circle (0.1);
+		\draw[line width=0.5mm, color=black!57](6, 3) -- (15, 6);
+		\draw[line width=0.5mm, color=black!76](-4, 5) -- (-2, 2);
+		\draw[line width=0.5mm, color=black!71] (7, 1) rectangle (8, -3);
+		
+		\node[line width=0.5mm, color=black!89] at (-2, 3) {\Strichmaxerl[3][68][28]};
+		\node[line width=0.7mm, color=black!46] at (-7, 7) {\Strichmaxerl[6][75][85]};
+		\node[line width=0.2mm, color=black!16] at (8, 2) {\Strichmaxerl[6][57][26]};
+		\draw[line width=0.6mm, color=black!56] (-2, 3) rectangle (-4, 2);
+		\node[line width=0.6mm, color=black!26] at (9, 1) {\Strichmaxerl[1][87][40]};
+		\node[line width=0.5mm, color=black!33] at (5, -1) {\Strichmaxerl[1][50][61]};
+		\node[line width=0.7mm, color=black!48] at (8, 6) {\Strichmaxerl[5][7][79]};
+		\draw [line width=0.2mm, color=black!38](10, 7) circle (0.6);
+		
+		\draw[line width=0.3mm, color=black!16] (6, -3) rectangle (7, 10);
+		\draw [line width=0.7mm, color=black!65](-5, 5) circle (2.4);
+		\node[line width=0.6mm, color=black!69] at (9, 8) {\Strichmaxerl[3][35][13]};
+		
+		
+		\draw[line width=0.5mm] (-0.1, 4.5) -- (0.4, 5.0) -- (0.9, 4.5);
+		\draw[fill=black!50] (-0.6, 4.5) rectangle (1.4, 2.5);
+		
+		\draw[line width=0.5mm] (0.4, 7) -- (0.4, 5.0);
+		\centerarc[line width=0.5mm](1, 7)(0:180:0.6);
+		\draw[line width=0.5mm](1.6, 7) -- (2.15, -1.8);
+		
+		\node at (2.6, -1.9) {\Strichmaxerl[10][-35][-50]};
+		
+		\draw[fill=black] (-2, -3) rectangle (5, -3.15);
+		
+		%%%%% END %%%%%
+	\end{tikzpicture}
+\end{document}

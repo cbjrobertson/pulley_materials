@@ -6,14 +6,21 @@ find ./pulleys -type f \( -iname '*.pdf' -o -iname '*.aux' -o -iname '*.log' -o 
 find ./pulleys -name "*.pdf" -exec mv {} ./pdfs \;
 
 # Compile all tex file in ./pulleys or ./simple_pulleys; move pdfs to ./pdfs; delete all compile files
+
+cd modified_pulleys && \
+find . -type f -name "*.tex" | while read file; do pdflatex "$file"; echo "$file"; done && \
+find . -name "*.pdf" -exec mv {} ../pdfs/modified \; && \
+find . -type f \( -iname '*.pdf' -o -iname '*.aux' -o -iname '*.log' -o -iname '*.gz' \) -delete && \
+cd ..
+
 cd simple_pulleys && \
 find . -type f -name "*.tex" | while read file; do pdflatex "$file"; echo "$file"; done && \
 find . -name "*.pdf" -exec mv {} ../pdfs/simple \; && \
 find . -type f \( -iname '*.pdf' -o -iname '*.aux' -o -iname '*.log' -o -iname '*.gz' \) -delete && \
 cd ..
 
-cd pulleys && \
+cd random_pulleys && \
 find . -type f -name "*.tex" | while read file; do pdflatex "$file"; echo "$file"; done && \
-find . -name "*.pdf" -exec mv {} ../pdfs/original \; && \
+find . -name "*.pdf" -exec mv {} ../pdfs/random \; && \
 find . -type f \( -iname '*.pdf' -o -iname '*.aux' -o -iname '*.log' -o -iname '*.gz' \) -delete && \
 cd ..

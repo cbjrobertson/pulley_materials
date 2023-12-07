@@ -1,0 +1,78 @@
+\documentclass{article}
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikzsymbols}
+\usetikzlibrary{calc,patterns}
+\usepackage{float}
+\usepackage{pdflscape}
+
+\def\centerarc[#1](#2)(#3:#4:#5){\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5);}
+
+\pagestyle{empty}
+\begin{document}
+	\centering
+	\begin{figure}[H]
+			\begin{tikzpicture}
+				%%%%% START %%%%%
+				\def\a{10}
+				\def\radlg{0.75}
+				\def\radrp{0.85}
+				\def\radsm{0.1}
+				\def\yone{\a-\a*0.65}
+				\def\xone{2}
+				\def\ytwo{\a+0.05}
+				\def\xtwo{7}
+				\def\xthree{4}
+				\def\ythree{\a-\a*0.35}
+				\def\xfour{3}
+				\def\yfour{\a+4-2}
+				\def\dx{-1.5}
+				\def\dy{\a+1.15}
+				\def\dw{1.75mm}
+				\def\barbump{0.2}
+				\def\width{1mm}
+				
+				\draw[fill=black] (-2,\a+4) rectangle (8,\a+4.125);
+					
+				\draw[fill=black!55] (-2,\a) rectangle (\xtwo,\a+0.125);
+				
+				\draw (\xone,\yone) circle (\radlg);
+				\draw[fill=black] (\xone,\yone) circle (\radsm);
+	
+				\draw (\xtwo,\ytwo) circle (\radlg);
+				\draw[fill=black] (\xtwo,\ytwo) circle (\radsm);
+				
+				\draw[fill=white](\xthree,\ythree) circle (\radlg);
+				\draw[fill=black] (\xthree,\ythree) circle (\radsm);
+				\draw[fill=black!50] (\xthree-\radrp-\barbump,\ythree) circle (\radsm);
+				\draw[fill=black!50] (\xthree+\radrp+\barbump,\ythree) circle (\radsm);
+				\draw[pattern=north west lines, pattern color=black] (\xthree-\radrp-\barbump,\ythree+0.1) rectangle (\xthree+\radrp+\barbump,\ythree-0.1); 
+				
+				\draw (\xfour,\yfour) circle (\radlg);
+				\draw[fill=black] (\xfour,\yfour) circle (\radsm);
+				\draw[line width=\width] (\xfour,\yfour) -- (\xfour,\a+4);				
+				
+				\draw (\xone,\yone) -- (\xone,\yone-2) -- (\xone-0.5,\yone-2.5) -- (\xone+0.5,\yone-2.5) -- (\xone,\yone-2);
+				\draw[fill=black!50] (\xone-1.05,\yone-2.5) rectangle (\xone+1.05,\yone-4.5);  
+				
+				\draw[line width=\width] (\xone-\radrp,\a) -- (\xone-\radrp,\yone); 
+				\centerarc[line width=\width](\xone,\yone)(180:360:\radrp);
+				\draw[line width=\width](\xone+\radrp,\yone) -- (\xthree-\radrp,\ythree);
+				\centerarc[line width=\width](\xthree,\ythree)(110:180:\radrp);
+				\draw[line width=\width]({\xthree+\radrp*cos(110)},{\ythree+\radrp*sin(110)}) -- ({\xtwo+\radrp*cos(300)},{\ytwo+\radrp*sin(300)});
+				\centerarc[line width=\width](\xtwo,\ytwo)(-60:50:\radrp);
+				\draw[line width=\width]({\xtwo+\radrp*cos(50)},{\ytwo+\radrp*sin(50)}) -- ({\xfour+\radrp*cos(60)},{\yfour+\radrp*sin(60)});
+				\centerarc[line width=\width](\xfour,\yfour)(60:120:\radrp);
+				\draw[line width=\width]({\xfour+\radrp*cos(120)},{\yfour+\radrp*sin(120)}) -- (\dx+0.3,\dy);
+				
+				\node at (\dx,\dy) {\Strichmaxerl[10][-175][35]};
+				
+				\draw[fill=black] (-2,-2) rectangle (8,-2.15);
+				%%%%% END %%%%%
+			\end{tikzpicture}
+	\end{figure}
+	
+\end{document}

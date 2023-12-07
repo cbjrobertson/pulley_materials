@@ -1,0 +1,54 @@
+\documentclass[border=10pt]{standalone}
+
+\usepackage{tikz}
+\usepackage{tikzsymbols}
+\usetikzlibrary{calc,patterns,shapes.geometric}
+
+\def\centerarc[#1](#2)(#3:#4:#5){\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5);}
+
+\begin{document}
+	\begin{tikzpicture}
+		%%%%% START %%%%%
+		
+		\draw[fill=black] (-2, 10) rectangle (5, 10.125);
+		
+		\draw (1, 7) circle (0.5);
+		\draw[fill=black] (1, 7) circle (0.1);
+		\draw (1, 10) -- (1, 7);
+		
+		\draw[line width=0.4mm, color=black!36] (-4, 9) rectangle (-6, 3);
+		
+		\draw[line width=0.4mm, color=black!48] (-2, 3) rectangle (-4, 10);
+		\node[line width=0.7mm, color=black!60] at (-8, 5) {\Strichmaxerl[5][21][71]};
+		\draw[line width=0.6mm, color=black!86] (5, 1) rectangle (5, 10);
+		\draw[line width=0.2mm, color=black!60] (-2, 10) rectangle (-2, 6);
+		\draw[line width=0.5mm, color=black!61](-4, 7) -- (-4, -1);
+		\draw [line width=0.5mm, color=black!34](10, 5) circle (0.5);
+		\draw [line width=0.2mm, color=black!66](7, 2) circle (0.5);
+		\draw[line width=0.6mm, color=black!27] (-4, 0) rectangle (-5, -3);
+		\draw[line width=0.4mm, color=black!19] (-2, 6) rectangle (-3, -3);
+		\node[line width=0.4mm, color=black!49] at (10, 7) {\Strichmaxerl[5][7][77]};
+		
+		\draw[line width=0.5mm, color=black!84](7, 9) -- (6, -2);
+		\draw [line width=0.5mm, color=black!62](12, 8) circle (0.1);
+		
+		\node[line width=0.6mm, color=black!65] at (8, 2) {\Strichmaxerl[7][39][77]};
+		\node[line width=0.4mm, color=black!88] at (8, 0) {\Strichmaxerl[1][76][62]};
+		\draw [line width=0.3mm, color=black!90](-8, 8) circle (1.0);
+		\draw[line width=0.5mm, color=black!11](-2, 8) -- (-12, 10);
+		
+		
+		\draw[line width=0.5mm] (-0.1, 4.5) -- (0.4, 5.0) -- (0.9, 4.5);
+		\draw[fill=black!50] (-0.6, 4.5) rectangle (1.4, 2.5);
+		
+		\draw[line width=0.5mm] (0.4, 7) -- (0.4, 5.0);
+		\centerarc[line width=0.5mm](1, 7)(0:180:0.6);
+		\draw[line width=0.5mm](1.6, 7) -- (2.15, -1.8);
+		
+		\node at (2.6, -1.9) {\Strichmaxerl[10][-35][-50]};
+		
+		\draw[fill=black] (-2, -3) rectangle (5, -3.15);
+		
+		%%%%% END %%%%%
+	\end{tikzpicture}
+\end{document}

@@ -18,14 +18,14 @@ from numpy import cos, sin
 START = "%%%%% START %%%%%"
 END = "%%%%% END %%%%%"
 R = "%%%%% REPLACE %%%%%"
-PATH = "../pulleys/MA*/*.tex"
+PATH = "../modified_pulleys/*.tex"
 PRECISION = 3
 
 # =============================================================================
 # functions
 # =============================================================================
 def load_tikz(path):
-    keys = [key.split("/")[-1].split(".")[0] for key in glob.glob(path)]
+    keys = [key.split("/")[-1].rstrip(".tex") for key in glob.glob(path)]
     pics = [open(x,"r").read() for x in glob.glob(path)]
     pics = [pic.split(START)[1].split(END)[0] for pic in pics]
     return dict(zip(keys,pics))
@@ -158,12 +158,12 @@ def sub_in_evaluated(ts):
 
 if __name__ == "__main__":
     pics = load_tikz(PATH)
-    with open("../static_materials/base/single_base.tex","r") as f:
+    with open("../static_materials/base/rand_base.tex","r") as f:
         s_base = f.read()
     for name, pic in pics.items():
         ts = sub_numbers_for_vars(pic)
         ts_eval = sub_in_evaluated(ts)
-        ts_tabbed = "\n".join([f"\t\t\t\t{line}" for line in ts_eval.split("\n")])
+        ts_tabbed = "\n".join(["\t\t{}".format(line.replace('\t','').lstrip()) for line in ts_eval.split("\n")])
         ts_out = s_base.replace(R,ts_tabbed)
         with open(f"../simple_pulleys/simp_{name}.tex", "w") as f:
             f.write(ts_out)

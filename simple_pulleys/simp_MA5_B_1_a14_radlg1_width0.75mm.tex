@@ -1,0 +1,49 @@
+\documentclass[border=10pt]{standalone}
+
+\usepackage{tikz}
+\usepackage{tikzsymbols}
+\usetikzlibrary{calc,patterns,shapes.geometric}
+
+\def\centerarc[#1](#2)(#3:#4:#5){\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5);}
+
+\begin{document}
+	\begin{tikzpicture}
+		%%%%% START %%%%%
+		\draw[fill=black] (-6, 14) rectangle (5, 14.125);
+		
+		\draw (0, 5.6) circle (1);
+		\draw[fill=black] (0, 5.6) circle (0.1);
+		
+		\draw (1, 2.1) circle (1);
+		\draw[fill=black] (1, 2.1) circle (0.1);
+		
+		\draw (1.4, 11.2) circle (1);
+		\draw[fill=black] (1.4, 11.2) circle (0.1);
+		\draw[very thick] (1.4, 11.2) -- (1.4, 14);
+		
+		\draw (-2, -1.4) circle (1);
+		\draw[fill=black] (-2, -1.4) circle (0.1);
+		\draw[thick] (-2, -1.4) -- (-1.75, -3);
+		
+		
+		\draw[thick]  (0.75, -0.7) -- (1.25, -0.2) -- (1.75, -0.7) -- (2.25, -0.2) -- (2.75, -0.7);
+		\draw[fill=black!50] (0.75, -0.7) rectangle (2.75, -2.7);
+		\draw[line width=0.75mm] (-5.05, -1.8) -- (-2, -2.5);
+		\centerarc[line width=0.75mm](-2, -1.4)(270:360:1.1);
+		\draw[line width=0.75mm] (-0.9, -1.4) -- (-1.1, 5.6);
+		\draw[line width=0.75mm] (0, 5.6) -- (0.3, 11.0);
+		\draw[line width=0.75mm, fill=black](0.2, 10.4) rectangle (0.4, 11.0);
+		\centerarc[line width=0.75mm](0, 5.6)(-20:180:1.1);
+		\draw[line width=0.75mm] (0.449, 4.596) -- (1.536, 3.06);
+		\centerarc[line width=0.75mm](1, 2.1)(160:380:1.1);
+		\draw[line width=0.75mm] (1.836, 1.385) -- (0.3, 11.2);
+		\draw[line width=0.75mm](1, 2.1) -- (1.25, -0.2);
+		\centerarc[line width=0.75mm](1.4, 11.2)(0:180:1.1);
+		\draw[line width=0.75mm] (2.5, 11.2) -- (2.25, -0.2);
+		
+		\node at (-5.5, -1.9) {\Strichmaxerl[10][50][35]};
+		
+		\draw[fill=black] (-6, -3) rectangle (5, -3.15);
+		%%%%% END %%%%%
+	\end{tikzpicture}
+\end{document}

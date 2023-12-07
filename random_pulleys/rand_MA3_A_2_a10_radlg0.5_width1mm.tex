@@ -1,0 +1,51 @@
+\documentclass[border=10pt]{standalone}
+
+\usepackage{tikz}
+\usepackage{tikzsymbols}
+\usetikzlibrary{calc,patterns,shapes.geometric}
+
+\def\centerarc[#1](#2)(#3:#4:#5){\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5);}
+
+\begin{document}
+	\begin{tikzpicture}
+		%%%%% START %%%%%
+		
+		\draw[fill=black] (-2, 10) rectangle (5, 10.125);
+		
+		\draw (1, 7) circle (0.5);
+		\draw[fill=black] (1, 7) circle (0.1);
+		\draw (1, 10) -- (1, 7);
+		
+		\draw[line width=0.5mm] (-0.1, 4.5) -- (0.4, 5.0) -- (0.9, 4.5);
+		\draw[fill=black!50] (-0.6, 4.5) rectangle (1.4, 2.5);
+		
+		\draw[line width=0.5mm] (0.4, 7) -- (0.4, 5.0);
+		\centerarc[line width=0.5mm](1, 7)(0:180:0.6);
+		\draw[line width=0.5mm](1.6, 7) -- (2.15, -1.8);
+		
+		\node at (2.6, -1.9) {\Strichmaxerl[10][-35][-50]};
+		
+		\draw[line width=0.5mm, color=black!15](-4, 5) -- (-2, 6);
+		
+		\draw[line width=0.4mm, color=black!97] (-2, 9) rectangle (-4, 2);
+		\draw[line width=0.5mm, color=black!55](10, 6) -- (5, 10);
+		\draw [line width=0.2mm, color=black!94](-9, -1) circle (1.7);
+		\draw [line width=0.5mm, color=black!59](-2, 1) circle (0.1);
+		\draw[line width=0.5mm, color=black!27](-7, 9) -- (-11, 8);
+		\draw [line width=0.3mm, color=black!43](8, 3) circle (0.3);
+		\draw[line width=0.5mm, color=black!90] (5, 4) rectangle (6, 9);
+		\draw[line width=0.5mm, color=black!96](8, 8) -- (6, 5);
+		
+		\draw[line width=0.5mm, color=black!93](7, -3) -- (13, 1);
+		
+		\draw[line width=0.4mm, color=black!19] (5, 7) rectangle (5, 10);
+		\draw [line width=0.6mm, color=black!92](6, -2) circle (2.2);
+		\draw[line width=0.7mm, color=black!43] (-2, 5) rectangle (-5, 7);
+		
+		\draw[line width=0.2mm, color=black!88] (5, 6) rectangle (5, 8);
+		
+		\draw[fill=black] (-2, -3) rectangle (5, -3.15);
+		
+		%%%%% END %%%%%
+	\end{tikzpicture}
+\end{document}

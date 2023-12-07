@@ -1,6 +1,1 @@
-pulleys/MA*/*.aux
-pulleys/MA*/*.pdf
-pulleys/MA*/*.log
-pulleys/MA*/*.gz
-
-.DS_Store
+*.DS_Store
