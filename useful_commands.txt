@@ -1,6 +1,6 @@
 
 # Delete non tex files from ./pulleys
-find ./pulleys -type f \( -iname '*.pdf' -o -iname '*.aux' -o -iname '*.log' -o -iname '*.gz' \) -delete
+find ./simple_pulleys -type f \( -iname '*.pdf' -o -iname '*.aux' -o -iname '*.log' -o -iname '*.gz' \) -delete
 
 # Move pdfs from ./pulleys to ./pdfs
 find ./pulleys -name "*.pdf" -exec mv {} ./pdfs \;
