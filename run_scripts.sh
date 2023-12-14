@@ -18,7 +18,6 @@ python add_random_elements.py -i "../pulleys/tex/crossed/simple/*.tex" -o "../pu
 cd ..
 
 # Compile pdfs from .tex docs and clean up
- Compile constant simple
 cd ./pulleys/tex/constant/simple
 find . -type f -name "*.tex" | while read file; do pdflatex "$file"; echo "$file"; done
 find . -name "*.pdf" -exec mv {} ../../../pdfs/constant/simple \;
