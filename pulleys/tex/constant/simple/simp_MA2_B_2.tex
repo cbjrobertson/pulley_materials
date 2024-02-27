@@ -1,7 +1,8 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 
 \usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{subcaption}
 \usepackage{tikzsymbols}
 \usetikzlibrary{calc,patterns,shapes.geometric}
 \pagestyle{empty}
@@ -13,11 +14,10 @@
 \begin{document}
 	\begin{figure}
 		\centering
+		\begin{subfigure}[b]{0.48\textwidth}
 		\begin{tikzpicture}
 			%%%%% START %%%%%
-			\draw[fill=black] (-2, 14) rectangle (8, 14.125);
-			
-			\draw[fill=black!55] (-2, 10) rectangle (7, 10.125);
+			\draw[fill=black] (-4, 14) rectangle (8, 14.125);
 			
 			\draw (2, 3.5) circle (1);
 			\draw[fill=black] (2, 3.5) circle (0.1);
@@ -48,10 +48,12 @@
 			\centerarc[line width=0.5mm](3, 12)(60:120:1.1);
 			\draw[line width=0.5mm](2.45, 12.9526) -- (-1.2, 11.15);
 			
-			\node at (-1.5, 11.15) {\Strichmaxerl[10][-175][35]};
+			\node at (-1.5, 11.15) {\footnotesize \Strichmaxerl[10][-175][35]};
+			\draw[fill=black!55] (-4, 10) rectangle (7, 10.125);
 			
-			\draw[fill=black] (-2, -2) rectangle (8, -2.15);
+			\draw[fill=black] (-4, -2) rectangle (8, -2.15);
 			%%%%% END %%%%%
 		\end{tikzpicture}
+	\end{subfigure}
 	\end{figure}	
 \end{document}

@@ -8,8 +8,8 @@ from ironpdf import PdfDocument
 # =============================================================================
 # constants
 # =============================================================================
-PATH = "../pulleys/pdfs/constant/random/*.pdf"
-OUTPUT_PATH = "../pulleys/jpgs/constant/random/{}.jpg" 
+PATH = "../pulleys/pdfs/constant/compare/*.pdf"
+OUTPUT_PATH = "../pulleys/jpgs/constant/compare/{}.jpg" 
 
 # =============================================================================
 # parse args

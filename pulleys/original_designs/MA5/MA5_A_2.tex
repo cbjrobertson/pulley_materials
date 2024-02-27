@@ -16,7 +16,7 @@
 	\begin{figure}[H]
 		\begin{tikzpicture}
 			%%%%% START %%%%%
-			\def\a{10}
+			\def\a{14}
 			\def\radlg{1}
 			\def\radrp{1.1}
 			\def\radsm{0.1}
@@ -35,10 +35,10 @@
 			\def\ywallone{\a-\a+6}
 			\def\xwallone{\xthree+1.5}
 			\def\ywalltwo{\a-\a*1.1}
-			\def\xwalltwo{\xthree+1.5}
+			\def\xwalltwo{\xthree}
 			\def\bump{0.3}
 			
-			\draw[fill=black] (-2,\a) rectangle (12,\a+0.125);
+			\draw[fill=black] (-2,\a) rectangle (10,\a+0.125);
 			
 			\draw (\xone,\yh) circle (\radlg);
 			\draw[fill=black] (\xone,\yh) circle (\radsm);
@@ -85,11 +85,11 @@
 			\centerarc[line width=\width](\xwallone,\ywallone)(160:211:-\radrp);
 			\draw[line width=\width]({\xwallone+\radrp*-cos(160)}, {\ywallone+\radrp*-sin(160)}) -- (\xwalltwo-\radrp+0.12*\radrp,\ywalltwo+0.48*\radrp); 
 			\centerarc[line width=\width](\xwalltwo,\ywalltwo)(150:280:\radrp);
-			\draw[line width=\width]({\xwalltwo+\radrp*cos(280)},{\ywalltwo+\radrp*sin(280)}) -- (11, -1.8);
+			\draw[line width=\width]({\xwalltwo+\radrp*cos(280)},{\ywalltwo+\radrp*sin(280)}) -- (9.1, -1.8);
 			
-			\node at (11.3, -2) {\Strichmaxerl[10][-35][-50]};
+			\node at (9.3, -2) {\Strichmaxerl[10][-35][-50]};
 			
-			\draw[fill=black] (-2,-3) rectangle (12,-3.15);
+			\draw[fill=black] (-2,-3) rectangle (10,-3.15);
 			%%%%% END %%%%%
 		\end{tikzpicture}
 	\end{figure}

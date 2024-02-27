@@ -16,7 +16,7 @@
 	\begin{figure}[H]
 		\begin{tikzpicture}
 			%%%%% START %%%%%
-			\def\a{10}
+			\def\a{14}
 			\def\radlg{1}
 			\def\radrp{1.1}
 			\def\radsm{0.1}
@@ -36,7 +36,7 @@
 			\def\ywalltwo{0.3*\a}
 			\def\xwalltwo{\xone+6.5}
 			
-			\draw[fill=black] (-2,\a) rectangle (12,\a+0.125);
+			\draw[fill=black] (-2,\a) rectangle (10,\a+0.125);
 			
 			\draw (\xone,\yone) circle (\radlg);
 			\draw[fill=black] (\xone,\yone) circle (\radsm);
@@ -74,11 +74,11 @@
 			\centerarc[line width=\width](\xwalltwo,\ywalltwo)(215:135:-\radrp);
 			\draw[line width=\width](\xwalltwo+\radrp*0.8,\ywalltwo-\radrp*0.6) -- (\xwallone-\radrp*0.93,\ywallone+0.4*\radrp);
 			\centerarc[line width=\width](\xwallone,\ywallone)(-30:100:-\radrp);
-			\draw[line width=\width](\xwallone,\ywallone-\radrp) -- (10.5,-2.3);
+			\draw[line width=\width](\xwallone,\ywallone-\radrp) -- (9.3,-2.3);
 
-			\node at (10.8, -2.5) {\Strichmaxerl[10][-35][-50]};
+			\node at (9.5, -2.5) {\Strichmaxerl[10][-35][-50]};
 			
-			\draw[fill=black] (-2,-3.5) rectangle (12,-3.6);
+			\draw[fill=black] (-2,-3.5) rectangle (10,-3.6);
 			%%%%% END %%%%%
 		\end{tikzpicture}
 	\end{figure}

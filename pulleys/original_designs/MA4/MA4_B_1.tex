@@ -15,7 +15,8 @@
 	\begin{figure}
 		\begin{tikzpicture}
 			%%%%% START %%%%%
-			\def\a{10}
+			\def\a{14}
+			\def\plat{10}
 			\def\radlg{1}
 			\def\radrp{1.1}
 			\def\radsm{0.1}
@@ -25,15 +26,15 @@
 			\def\ytwo{\a*0.7}
 			\def\xthree{\xone+3}
 			\def\ythree{\a*0.3}
-			\def\dx{-0.05}
-			\def\dy{\a*1.5}
+			\def\dx{-2.5}
+			\def\dy{\plat*1.5}
 			\def\hlen{-2}
 			\def\width{0.5mm}
 			\def\ywallone{\yone}
 			\def\xwallone{\xone-3}
 			\def\bump{0.3}
 			
-			\draw[fill=black] (-4,\a) rectangle (6,\a+0.125);
+			\draw[fill=black] (-5,\a) rectangle (7,\a+0.125);
 			
 			\draw (\xone,\yone) circle (\radlg);
 			\draw[fill=black] (\xone,\yone) circle (\radsm);
@@ -57,7 +58,7 @@
 			\draw[fill=black!50] (\xwallone,\ywallone+\radrp+\bump) circle (\radsm);
 			\draw[fill=black!50] (\xwallone,\ywallone-\radrp-\bump) circle (\radsm);			
 
-			\draw[line width=\width] (\dx+0.5,\a+1) -- (\xwallone-\radrp*1, \ywallone+\radrp*0.15);
+			\draw[line width=\width] (\dx-0.4,\plat+1) -- (\xwallone-\radrp*1, \ywallone+\radrp*0.15);
 			\centerarc[line width=\width](\xwallone,\ywallone)(160:270:\radrp);
 			\draw[line width=\width](\xwallone,\ywallone-\radrp) -- (\xone,\yone - \radrp); 
 			\centerarc[line width=\width](\xone,\yone)(270:360:\radrp);
@@ -67,9 +68,10 @@
 			\centerarc[line width=\width](\xthree,\ythree)(160:360:\radrp);
 			\draw[line width=\width](\xthree+\radrp,\ythree) -- (\xthree+\radrp-0.1,\a);
 			
-			\node at (-0.07, \a+1.2) {\Strichmaxerl[10][120][-30]};
+			\node at (\dx, \plat+1.2) {\Strichmaxerl[10][30][-120]};
+			\draw[fill=black!55] (-3,\plat) rectangle (-0,\plat+0.125);
 			
-			\draw[fill=black] (-4,-3) rectangle (6,-3.15);
+			\draw[fill=black] (-5,-3) rectangle (7,-3.15);
 			%%%%% END %%%%%
 		\end{tikzpicture}
 	\end{figure}

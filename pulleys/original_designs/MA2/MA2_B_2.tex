@@ -17,27 +17,26 @@
 	\begin{figure}[H]
 			\begin{tikzpicture}
 				%%%%% START %%%%%
-				\def\a{10}
+				\def\a{14}
+				\def\plat{10}
 				\def\radlg{1}
 				\def\radrp{1.1}
 				\def\radsm{0.1}
-				\def\yone{\a-\a*0.65}
+				\def\yone{\plat-\plat*0.65}
 				\def\xone{2}
-				\def\ytwo{\a+0.05}
+				\def\ytwo{\plat+0.05}
 				\def\xtwo{7}
 				\def\xthree{4}
-				\def\ythree{\a-\a*0.35}
+				\def\ythree{\plat-\plat*0.35}
 				\def\xfour{3}
-				\def\yfour{\a+4-2}
+				\def\yfour{\plat+4-2}
 				\def\dx{-1.5}
-				\def\dy{\a+1.15}
+				\def\dy{\plat+1.15}
 				\def\dw{1.75mm}
 				\def\barbump{0.2}
 				\def\width{0.5mm}
 				
-				\draw[fill=black] (-2,\a+4) rectangle (8,\a+4.125);
-					
-				\draw[fill=black!55] (-2,\a) rectangle (\xtwo,\a+0.125);
+				\draw[fill=black] (-4,\a) rectangle (8,\a+0.125);
 				
 				\draw (\xone,\yone) circle (\radlg);
 				\draw[fill=black] (\xone,\yone) circle (\radsm);
@@ -53,12 +52,12 @@
 				
 				\draw (\xfour,\yfour) circle (\radlg);
 				\draw[fill=black] (\xfour,\yfour) circle (\radsm);
-				\draw[line width=\width] (\xfour,\yfour) -- (\xfour,\a+4);				
+				\draw[line width=\width] (\xfour,\yfour) -- (\xfour,\a);				
 				
 				\draw (\xone,\yone) -- (\xone,\yone-2) -- (\xone-0.5,\yone-2.5) -- (\xone+0.5,\yone-2.5) -- (\xone,\yone-2);
 				\draw[fill=black!50] (\xone-1.05,\yone-2.5) rectangle (\xone+1.05,\yone-4.5);  
 				
-				\draw[line width=\width] (\xone-\radrp,\a) -- (\xone-\radrp,\yone); 
+				\draw[line width=\width] (\xone-\radrp,\plat) -- (\xone-\radrp,\yone); 
 				\centerarc[line width=\width](\xone,\yone)(180:360:\radrp);
 				\draw[line width=\width](\xone+\radrp,\yone) -- (\xthree-\radrp,\ythree);
 				\centerarc[line width=\width](\xthree,\ythree)(110:180:\radrp);
@@ -69,8 +68,9 @@
 				\draw[line width=\width]({\xfour+\radrp*cos(120)},{\yfour+\radrp*sin(120)}) -- (\dx+0.3,\dy);
 				
 				\node at (\dx,\dy) {\Strichmaxerl[10][-175][35]};
+				\draw[fill=black!55] (-4,\plat) rectangle (\xtwo,\plat+0.125);
 				
-				\draw[fill=black] (-2,-2) rectangle (8,-2.15);
+				\draw[fill=black] (-4,-2) rectangle (8,-2.15);
 				%%%%% END %%%%%
 			\end{tikzpicture}
 	\end{figure}
