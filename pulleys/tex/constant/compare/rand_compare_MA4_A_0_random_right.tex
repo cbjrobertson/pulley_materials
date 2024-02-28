@@ -1,0 +1,92 @@
+\documentclass[a2paper, 12pt]{article}
+\usepackage[font={huge, bf}]{caption}
+\usepackage{fontspec}
+\setmainfont{Arial}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikzsymbols}
+\usetikzlibrary{calc,patterns,shapes.geometric}
+\usepackage{float}
+\usepackage{pdflscape}
+\usepackage{geometry}
+\geometry{landscape, margin=2cm}
+\captionsetup[subfigure]{justification=justified,singlelinecheck=false}
+\pagestyle{empty}
+
+\def\centerarc[#1](#2)(#3:#4:#5){\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5);}
+
+\begin{document}
+	\vspace*{\fill}
+	\begin{figure}[!htbp]
+		\centering
+		\begin{subfigure}[b]{0.48\textwidth}
+			\caption{Figure 1}
+			\centering
+			\begin{tikzpicture}
+				\draw[fill=black] (-2, 14) rectangle (10, 14.125);
+				
+				\draw (1, 1.26) circle (1);
+				\draw[fill=black] (1, 1.26) circle (0.1);
+				
+				\draw (2.1, 7.0) circle (1);
+				\draw[fill=black] (2.1, 7.0) circle (0.1);
+				
+				\draw (4.3, 9.8) circle (1);
+				\draw[fill=black] (4.3, 9.8) circle (0.1);
+				\draw[thick] (4.3, 9.8) -- (4.3, 14);
+				
+				\draw (1, 1.26) -- (1, -0.84) -- (0.5, -1.54) -- (1.5, -1.54) -- (1, -0.84);
+				\draw[fill=black!50] (0, -1.54) rectangle (2, -3.54);
+				
+				\draw[line width=0.5mm] (-0.1, 14) -- (-0.1, 1.26);
+				\centerarc[line width=0.5mm](1, 1.26)(180:360:1.1);
+				\draw[line width=0.5mm](2.1, 1.26) -- (2.1, 7.0);
+				\draw[line width=0.5mm] (1.0, 14) -- (1.0, 7.0);
+				\centerarc[line width=0.5mm](2.1, 7.0)(180:360:1.1);
+				\draw[line width=0.5mm](3.2, 7.0) -- (3.2, 9.8);
+				\centerarc[line width=0.5mm](4.3, 9.8)(30:180:1.1);
+				\draw[line width=0.5mm] (5.257, 10.35) -- (8.1, -2.3);
+				
+				\node at (8.5, -2.5) {\scriptsize \Strichmaxerl[10][-35][-50]};
+				
+				\draw[fill=black] (-2, -3.5) rectangle (10, -3.6);
+			\end{tikzpicture}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.48\textwidth}
+			\caption{Figure 2}
+			\centering
+			\begin{tikzpicture}
+				\draw[fill=black] (-2, 14) rectangle (10, 14.125);
+				
+				\draw (8,-2) circle (1);
+				\draw[fill=black] (8,-2) circle (0.1);
+				\draw (5,-3.6) -- (8,-2);
+				
+				\draw (3,3) circle (1);
+				\draw[fill=black] (3,3) circle (0.1);
+				\draw (-2,-3.6) -- (3,3);
+				
+				\draw (0,11) circle (1);
+				\draw[fill=black] (0,11) circle (0.1);
+				\draw (9,14.0) -- (0,11);
+				
+				\draw[line width=0.5mm](7.5,3) --  (8,3.5) -- (8.5,3);
+				\draw[fill=black!50] (7, 3) rectangle (9, 1);
+				
+				\draw[line width = 0.5mm] (5,7) -- (8,7);
+				\centerarc[line width = 0.5mm](5,6)(90:180:1);
+				\draw[line width = 0.5mm] (4,6) -- (4,0);
+				\centerarc[line width = 0.5mm](5,0)(180:360:1);
+				\draw[line width = 0.5mm] (6,0) -- (6,4);
+				\centerarc[line width = 0.5mm](7,4)(0:180:1);
+				
+				\node at (1, 1) {\scriptsize \Strichmaxerl[10][-108][38]};
+				
+				\draw[fill=black] (-2, -3.5) rectangle (10, -3.6);
+			\end{tikzpicture}
+		\end{subfigure}
+	\end{figure}
+		\vspace*{\fill}
+\end{document}

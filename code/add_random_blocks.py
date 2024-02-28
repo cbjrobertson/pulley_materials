@@ -281,13 +281,17 @@ def create_compare(fn, name):
     random_system += add_random_weight(top, bottom, left, right, RADLG, WIDTH)
     man = add_random_man(top, bottom, left, right)
     len_man = len(man) - 1
-    while len(random_system) < len(original_system) - len_man - 1:
+    while len(random_system) < len(original_system) - len_man - 3:
         random_system += add_random_rope(top, bottom, left, right, RADLG, WIDTH, 3)
+    while len(random_system) > len(original_system) - len_man - 3:
+        random_system.pop()
     random_system += [""]
     random_system += man
     random_system += [rects[1]]
     #adjust man size for font
     original_system = [x for x in map(man_func, original_system)]
+    assert len(random_system) == len(original_system), "Something went wrong"
+    print(f"Lenght of original_system was {len(original_system)};\n Length of random system was {len(random_system)}\n\n")
     return random_system, original_system
     
 def main(inpath, outpath):

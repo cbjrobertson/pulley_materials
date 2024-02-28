@@ -26,37 +26,33 @@
 			\begin{tikzpicture}
 				\draw[fill=black] (-2, 14) rectangle (10, 14.125);
 				
-				\draw (0,12) circle (1);
-				\draw[fill=black] (0,12) circle (0.1);
-				\draw (10,14.0) -- (0,12);
+				\draw (8,12) circle (1);
+				\draw[fill=black] (8,12) circle (0.1);
+				\draw[pattern=north west lines, pattern color=black] (7.9,13.5) rectangle (8.1,10.5);
+				\draw[fill=black!50] (8,13.5) circle (0.1);
+				\draw[fill=black!50] (8,10.5) circle (0.1);
 				
-				\draw (4,10) circle (1);
-				\draw[fill=black] (4,10) circle (0.1);
-				\draw[pattern=north west lines, pattern color=black] (3.9,11.5) rectangle (4.1,8.5);
-				\draw[fill=black!50] (4,11.5) circle (0.1);
-				\draw[fill=black!50] (4,8.5) circle (0.1);
+				\draw (7,12) circle (1);
+				\draw[fill=black] (7,12) circle (0.1);
+				\draw (-1,14.0) -- (7,12);
 				
-				\draw (0,10) circle (1);
-				\draw[fill=black] (0,10) circle (0.1);
-				\draw (6,14.0) -- (0,10);
+				\draw (0,8) circle (1);
+				\draw[fill=black] (0,8) circle (0.1);
+				\draw[pattern=north west lines, pattern color=black] (-0.1,9.5) rectangle (0.1,6.5);
+				\draw[fill=black!50] (0,9.5) circle (0.1);
+				\draw[fill=black!50] (0,6.5) circle (0.1);
 				
 				\draw[line width=0.5mm](5,2.5) -- (5,12.0);
 				\draw[line width=0.5mm](4.5,2) --  (5,2.5) -- (5.5,2);
 				\draw[fill=black!50] (4, 2) rectangle (6, 0);
 				
-				\draw[line width = 0.5mm] (4,8) -- (4,13);
-				\centerarc[line width = 0.5mm](5,13)(0:180:1);
-				\draw[line width = 0.5mm] (6,13) -- (6,10);
-				\centerarc[line width = 0.5mm](7,10)(270:180:1);
-				\draw[line width = 0.5mm] (7,9) -- (8,9);
-				\draw[line width = 0.5mm] (3,7) -- (3,12);
-				\centerarc[line width = 0.5mm](4,12)(0:180:1);
-				\draw[line width = 0.5mm] (5,12) -- (5,9);
-				\centerarc[line width = 0.5mm](6,9)(270:180:1);
-				\draw[line width = 0.5mm] (6,8) -- (7,8);
+				\draw[line width = 0.5mm] (4,6) -- (4,11);
+				\centerarc[line width = 0.5mm](5,11)(0:180:1);
+				\draw[line width = 0.5mm] (6,11) -- (6,8);
+				\centerarc[line width = 0.5mm](7,8)(270:180:1);
+				\draw[line width = 0.5mm] (7,7) -- (8,7);
 				
-				\node at (7, 2) {\scriptsize \Strichmaxerl[10][-173][78]};
-				\draw[fill=black] (4, 0.8999999999999999) rectangle (8, 0.8);
+				\node at (6, 11) {\scriptsize \Strichmaxerl[10][-107][80]};
 				
 				\draw[fill=black] (-2, 0) rectangle (10, -0.15);
 			\end{tikzpicture}
