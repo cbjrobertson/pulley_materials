@@ -5,12 +5,12 @@
 #find ./pulleys/jpgs -type f -iname '*.jpg' -delete
 #find ./pulleys/tex -type f \( -iname '*.pdf' -o -iname '*.aux' -o -iname '*.log' -o -iname '*.gz' \) -delete
 #find ./pulleys/tex -type f -iname '*.tex' -delete
-#find ./pulleys/tex/constant/compare -type f -iname '*.tex' -delete
+find ./pulleys/tex/constant/compare -type f -iname '*.tex' -delete
 find ./pulleys/pdfs/constant/compare -type f -iname '*.pdf' -delete
 find ./pulleys/jpgs/constant/compare -type f -iname '*.jpg' -delete
 
 #### Run scripts
-#cd code
+cd code
 ### constant versions
 #python make_simple_pulleys.py -i "../pulleys/original_designs/MA*/*.tex" -o "../pulleys/tex/constant/simple/simp_{}.tex" -b "../pulleys/static_materials/article_base.tex"
 ##python add_random_elements.py -i "../pulleys/tex/constant/simple/*.tex" -o "../pulleys/tex/constant/random/rand_{}.tex" -b "../pulleys/static_materials/article_base.tex"
@@ -21,8 +21,8 @@ find ./pulleys/jpgs/constant/compare -type f -iname '*.jpg' -delete
 ##python add_random_elements.py -i "../pulleys/tex/crossed/simple/*.tex" -o "../pulleys/tex/crossed/random/rand_{}.tex" -b "../pulleys/static_materials/article_base.tex" --crossed
 ##
 ### Compare version
-#python add_random_blocks.py -i "../pulleys/tex/constant/simple/simp_*.tex" -o "../pulleys/tex/constant/compare/rand_compare_{}_random_{}.tex" -b "../pulleys/static_materials/compare_base.tex"
-#cd ..
+python add_random_blocks.py -i "../pulleys/tex/constant/simple/simp_*.tex" -o "../pulleys/tex/constant/compare/rand_compare_{}_random_{}.tex" -b "../pulleys/static_materials/compare_base.tex"
+cd ..
 #
 ## Compile pdfs from .tex docs and clean up
 #cd ./pulleys/tex/constant/simple
